@@ -9,25 +9,10 @@ import Foundation
 import SwiftUI
 
 struct SettingView: View {
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    
     var body: some View {
         Text("SettingView")
             .navigationBarBackButtonHidden(true)
-            .navigationBarItems(leading: backButton)
+            .navigationBarItems(leading: NavigationBackButton())
     }
-    
-    var backButton : some View {
-        Button {
-            self.presentationMode.wrappedValue.dismiss()
-        } label: {
-            HStack {
-                Image(systemName: "chevron.backward")
-                    .aspectRatio(contentMode: .fit)
-            }
-        }
-    }
-    
-    
 }
 

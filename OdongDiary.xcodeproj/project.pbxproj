@@ -13,6 +13,7 @@
 		DE3C978E28BBA1AE00ACAEF6 /* DiaryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3C978D28BBA1AE00ACAEF6 /* DiaryDetailView.swift */; };
 		DE3C979028BBA5A500ACAEF6 /* DiaryGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3C978F28BBA5A500ACAEF6 /* DiaryGridView.swift */; };
 		DE3C979228BBB39A00ACAEF6 /* DiaryGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3C979128BBB39A00ACAEF6 /* DiaryGridCell.swift */; };
+		DE3C979428BBD77000ACAEF6 /* NavigationBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3C979328BBD77000ACAEF6 /* NavigationBackButton.swift */; };
 		DE52FBCC28BB66BB00E5A2F8 /* OdongDiaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE52FBCB28BB66BB00E5A2F8 /* OdongDiaryApp.swift */; };
 		DE52FBCE28BB66BB00E5A2F8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE52FBCD28BB66BB00E5A2F8 /* HomeView.swift */; };
 		DE52FBD028BB66BC00E5A2F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE52FBCF28BB66BC00E5A2F8 /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 		DE3C978D28BBA1AE00ACAEF6 /* DiaryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryDetailView.swift; sourceTree = "<group>"; };
 		DE3C978F28BBA5A500ACAEF6 /* DiaryGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryGridView.swift; sourceTree = "<group>"; };
 		DE3C979128BBB39A00ACAEF6 /* DiaryGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryGridCell.swift; sourceTree = "<group>"; };
+		DE3C979328BBD77000ACAEF6 /* NavigationBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBackButton.swift; sourceTree = "<group>"; };
 		DE52FBC828BB66BB00E5A2F8 /* OdongDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OdongDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE52FBCB28BB66BB00E5A2F8 /* OdongDiaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OdongDiaryApp.swift; sourceTree = "<group>"; };
 		DE52FBCD28BB66BB00E5A2F8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 		DE3C978528BB9E4100ACAEF6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DE3C979328BBD77000ACAEF6 /* NavigationBackButton.swift */,
 				DE3C978928BBA0E200ACAEF6 /* HomeView */,
 				DE3C978A28BBA0EE00ACAEF6 /* WriteDiaryView */,
 				DE3C978C28BBA19E00ACAEF6 /* DiaryDetailView */,
@@ -215,6 +218,7 @@
 				DE3C979028BBA5A500ACAEF6 /* DiaryGridView.swift in Sources */,
 				DE3C978828BBA0DD00ACAEF6 /* Diary.swift in Sources */,
 				DE3C978328BB9CAC00ACAEF6 /* SettingView.swift in Sources */,
+				DE3C979428BBD77000ACAEF6 /* NavigationBackButton.swift in Sources */,
 				DE3C978E28BBA1AE00ACAEF6 /* DiaryDetailView.swift in Sources */,
 				DE3C979228BBB39A00ACAEF6 /* DiaryGridCell.swift in Sources */,
 				DE52FBCC28BB66BB00E5A2F8 /* OdongDiaryApp.swift in Sources */,
