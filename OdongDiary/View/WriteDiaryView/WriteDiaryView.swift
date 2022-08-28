@@ -27,6 +27,4 @@ struct WriteView: View {
             }
         }
     }
-    
-    
 }

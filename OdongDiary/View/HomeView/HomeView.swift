@@ -12,13 +12,16 @@ struct HomeView: View {
         NavigationView {
             VStack {
                 HStack {
-                    Button("Filter") {
+                    Button {
                         
+                    } label: {
+                        Image(systemName: "line.3.horizontal.decrease")
                     }
                     
                     Spacer()
                     
                     Text("Odong Diary")
+                        .font(.title)
                     
                     Spacer()
                     
@@ -26,28 +29,37 @@ struct HomeView: View {
                         SettingView()
                     } label: {
                         Image(systemName: "gearshape.fill")
-                        
-                        Image(systemName: "person.circle.fill")
                     }
-
                 }
+                .foregroundColor(.black)
                 
-                Spacer()
-                
-                NavigationLink {
-                    WriteView()
-                } label: {
-                    RoundedRectangle(cornerRadius: 10)
-                        .frame(width: 300, height: 50)
-                        .overlay(Text("일기쓰기").foregroundColor(.white))
+                ZStack {
+                    DiaryGridView()
+                    
+                    VStack {
+                        Spacer()
+                        
+                        NavigationLink {
+                            WriteView()
+                        } label: {
+                            RoundedRectangle(cornerRadius: 10)
+                                .foregroundColor(Color(hue: 0.294, saturation: 0.518, brightness: 0.789))
+                                .frame(width: 300, height: 60)
+                                .overlay(
+                                    Text("일기쓰기")
+                                        .font(.title3).foregroundColor(.white)
+                                         )
+                        }
+                    }
                 }
             }
             .navigationBarHidden(true)
         }
+        .padding(.horizontal)
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
     }
