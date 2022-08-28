@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE3C978128BB966D00ACAEF6 /* WriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3C978028BB966D00ACAEF6 /* WriteView.swift */; };
+		DE3C978328BB9CAC00ACAEF6 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3C978228BB9CAC00ACAEF6 /* SettingView.swift */; };
 		DE52FBCC28BB66BB00E5A2F8 /* OdongDiaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE52FBCB28BB66BB00E5A2F8 /* OdongDiaryApp.swift */; };
 		DE52FBCE28BB66BB00E5A2F8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE52FBCD28BB66BB00E5A2F8 /* ContentView.swift */; };
 		DE52FBD028BB66BC00E5A2F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE52FBCF28BB66BC00E5A2F8 /* Assets.xcassets */; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DE3C978028BB966D00ACAEF6 /* WriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteView.swift; sourceTree = "<group>"; };
+		DE3C978228BB9CAC00ACAEF6 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		DE52FBC828BB66BB00E5A2F8 /* OdongDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OdongDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE52FBCB28BB66BB00E5A2F8 /* OdongDiaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OdongDiaryApp.swift; sourceTree = "<group>"; };
 		DE52FBCD28BB66BB00E5A2F8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +57,8 @@
 			children = (
 				DE52FBCB28BB66BB00E5A2F8 /* OdongDiaryApp.swift */,
 				DE52FBCD28BB66BB00E5A2F8 /* ContentView.swift */,
+				DE3C978028BB966D00ACAEF6 /* WriteView.swift */,
+				DE3C978228BB9CAC00ACAEF6 /* SettingView.swift */,
 				DE52FBCF28BB66BC00E5A2F8 /* Assets.xcassets */,
 				DE52FBD128BB66BC00E5A2F8 /* Preview Content */,
 			);
@@ -138,7 +144,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE52FBCE28BB66BB00E5A2F8 /* ContentView.swift in Sources */,
+				DE3C978328BB9CAC00ACAEF6 /* SettingView.swift in Sources */,
 				DE52FBCC28BB66BB00E5A2F8 /* OdongDiaryApp.swift in Sources */,
+				DE3C978128BB966D00ACAEF6 /* WriteView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

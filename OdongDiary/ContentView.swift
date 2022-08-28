@@ -9,8 +9,41 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView {
+            VStack {
+                HStack {
+                    Button("Filter") {
+                        
+                    }
+                    
+                    Spacer()
+                    
+                    Text("Odong Diary")
+                    
+                    Spacer()
+                    
+                    NavigationLink {
+                        SettingView()
+                    } label: {
+                        Image(systemName: "gearshape.fill")
+                        
+                        Image(systemName: "person.circle.fill")
+                    }
+
+                }
+                
+                Spacer()
+                
+                NavigationLink {
+                    WriteView()
+                } label: {
+                    RoundedRectangle(cornerRadius: 10)
+                        .frame(width: 300, height: 50)
+                        .overlay(Text("일기쓰기").foregroundColor(.white))
+                }
+            }
+            .navigationBarHidden(true)
+        }
     }
 }
 
