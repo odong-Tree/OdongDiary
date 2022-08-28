@@ -7,10 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DE3C978128BB966D00ACAEF6 /* WriteDiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3C978028BB966D00ACAEF6 /* WriteDiaryView.swift */; };
+		DE3C978128BB966D00ACAEF6 /* DiaryEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3C978028BB966D00ACAEF6 /* DiaryEditView.swift */; };
 		DE3C978328BB9CAC00ACAEF6 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3C978228BB9CAC00ACAEF6 /* SettingView.swift */; };
 		DE3C978828BBA0DD00ACAEF6 /* Diary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3C978728BBA0DD00ACAEF6 /* Diary.swift */; };
-		DE3C978E28BBA1AE00ACAEF6 /* DiaryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3C978D28BBA1AE00ACAEF6 /* DiaryDetailView.swift */; };
 		DE3C979028BBA5A500ACAEF6 /* DiaryGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3C978F28BBA5A500ACAEF6 /* DiaryGridView.swift */; };
 		DE3C979228BBB39A00ACAEF6 /* DiaryGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3C979128BBB39A00ACAEF6 /* DiaryGridCell.swift */; };
 		DE3C979428BBD77000ACAEF6 /* NavigationBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3C979328BBD77000ACAEF6 /* NavigationBackButton.swift */; };
@@ -21,10 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DE3C978028BB966D00ACAEF6 /* WriteDiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteDiaryView.swift; sourceTree = "<group>"; };
+		DE3C978028BB966D00ACAEF6 /* DiaryEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryEditView.swift; sourceTree = "<group>"; };
 		DE3C978228BB9CAC00ACAEF6 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		DE3C978728BBA0DD00ACAEF6 /* Diary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diary.swift; sourceTree = "<group>"; };
-		DE3C978D28BBA1AE00ACAEF6 /* DiaryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryDetailView.swift; sourceTree = "<group>"; };
 		DE3C978F28BBA5A500ACAEF6 /* DiaryGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryGridView.swift; sourceTree = "<group>"; };
 		DE3C979128BBB39A00ACAEF6 /* DiaryGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryGridCell.swift; sourceTree = "<group>"; };
 		DE3C979328BBD77000ACAEF6 /* NavigationBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBackButton.swift; sourceTree = "<group>"; };
@@ -59,8 +57,7 @@
 			children = (
 				DE3C979328BBD77000ACAEF6 /* NavigationBackButton.swift */,
 				DE3C978928BBA0E200ACAEF6 /* HomeView */,
-				DE3C978A28BBA0EE00ACAEF6 /* WriteDiaryView */,
-				DE3C978C28BBA19E00ACAEF6 /* DiaryDetailView */,
+				DE3C978A28BBA0EE00ACAEF6 /* DiaryEditView */,
 				DE3C978B28BBA0F100ACAEF6 /* SettingView */,
 			);
 			path = View;
@@ -83,12 +80,12 @@
 			path = HomeView;
 			sourceTree = "<group>";
 		};
-		DE3C978A28BBA0EE00ACAEF6 /* WriteDiaryView */ = {
+		DE3C978A28BBA0EE00ACAEF6 /* DiaryEditView */ = {
 			isa = PBXGroup;
 			children = (
-				DE3C978028BB966D00ACAEF6 /* WriteDiaryView.swift */,
+				DE3C978028BB966D00ACAEF6 /* DiaryEditView.swift */,
 			);
-			path = WriteDiaryView;
+			path = DiaryEditView;
 			sourceTree = "<group>";
 		};
 		DE3C978B28BBA0F100ACAEF6 /* SettingView */ = {
@@ -97,14 +94,6 @@
 				DE3C978228BB9CAC00ACAEF6 /* SettingView.swift */,
 			);
 			path = SettingView;
-			sourceTree = "<group>";
-		};
-		DE3C978C28BBA19E00ACAEF6 /* DiaryDetailView */ = {
-			isa = PBXGroup;
-			children = (
-				DE3C978D28BBA1AE00ACAEF6 /* DiaryDetailView.swift */,
-			);
-			path = DiaryDetailView;
 			sourceTree = "<group>";
 		};
 		DE52FBBF28BB66BB00E5A2F8 = {
@@ -219,10 +208,9 @@
 				DE3C978828BBA0DD00ACAEF6 /* Diary.swift in Sources */,
 				DE3C978328BB9CAC00ACAEF6 /* SettingView.swift in Sources */,
 				DE3C979428BBD77000ACAEF6 /* NavigationBackButton.swift in Sources */,
-				DE3C978E28BBA1AE00ACAEF6 /* DiaryDetailView.swift in Sources */,
 				DE3C979228BBB39A00ACAEF6 /* DiaryGridCell.swift in Sources */,
 				DE52FBCC28BB66BB00E5A2F8 /* OdongDiaryApp.swift in Sources */,
-				DE3C978128BB966D00ACAEF6 /* WriteDiaryView.swift in Sources */,
+				DE3C978128BB966D00ACAEF6 /* DiaryEditView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
