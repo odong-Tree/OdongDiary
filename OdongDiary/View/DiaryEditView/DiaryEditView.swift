@@ -23,16 +23,22 @@ struct DiaryEditView: View {
             
             Spacer()
             
-            VStack {
-                VideoView()
+            GeometryReader { proxy in
                 
-                WriteView()
-                    .environmentObject(viewModel)
+                
+                VStack {
+                    VideoView()
+                        .frame(height: proxy.size.width * 9/16)
+                    
+                    WriteView()
+                        .background(Rectangle().foregroundColor(.gray))
+                }
             }
-            Text("DiaryEditView")
         }
         .navigationTitle("")
         .navigationBarBackButtonHidden(true)
         .padding(.horizontal)
+        .padding(.bottom)
+        .environmentObject(viewModel)
     }
 }

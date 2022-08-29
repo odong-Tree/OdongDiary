@@ -12,13 +12,11 @@ struct WriteView: View {
     @EnvironmentObject var viewModel: DiaryEditViewModel
     
     var body: some View {
-        ScrollView {
-            VStack {
-//                TitleView()
-                
-//                BodyView()
-                TextEditor(text: $viewModel.body)
-            }
+        VStack(alignment: .leading) {
+            TitleView()
+            
+            TextEditor(text: $viewModel.body)
+                .background(Rectangle().foregroundColor(.green))
         }
     }
 }
