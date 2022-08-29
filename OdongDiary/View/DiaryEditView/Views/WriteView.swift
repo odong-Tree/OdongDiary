@@ -15,9 +15,13 @@ struct WriteView: View {
         VStack(alignment: .leading) {
             TitleView()
             
-            TextEditor(text: $viewModel.body)
-                .background(Rectangle().foregroundColor(.green))
-                .disabled(viewModel.type == .read)
+            if viewModel.type == .write {
+                TextEditor(text: $viewModel.body)
+            } else if viewModel.type == .read {
+                ScrollView {
+                    Text(viewModel.body)
+                }
+            }
         }
         .environmentObject(viewModel)
     }

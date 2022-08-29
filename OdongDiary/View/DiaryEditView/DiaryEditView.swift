@@ -14,7 +14,7 @@ struct DiaryEditView: View {
     let type: EditViewType
 
     var body: some View {
-        VStack {
+        VStack(spacing: 10) {
             HStack {
                 NavigationBackButton()
                 
@@ -23,15 +23,12 @@ struct DiaryEditView: View {
                 CompleteButton()
             }
             
-            Spacer()
-            
             GeometryReader { proxy in
-                VStack {
+                VStack(spacing: 20) {
                     VideoView()
                         .frame(height: proxy.size.width * 9/16)
                     
                     WriteView()
-                        .background(Rectangle().foregroundColor(.gray))
                 }
             }
         }

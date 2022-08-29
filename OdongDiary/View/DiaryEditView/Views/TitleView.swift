@@ -12,13 +12,15 @@ struct TitleView: View {
     @EnvironmentObject var viewModel: DiaryEditViewModel
     
     var body: some View {
-        VStack {
+        VStack(alignment: .leading, spacing: 5) {
             Text(viewModel.date)
-                .font(.body)
+                .font(.caption)
             
-            Text(viewModel.title)
-                .font(.title3)
+            TextField(text: $viewModel.title) { }
+                .lineLimit(1)
+                .font(.title2.bold())
+                .disabled(viewModel.type == .read)
         }
-        .foregroundColor(.white)
+        .foregroundColor(.black.opacity(0.5))
     }
 }
