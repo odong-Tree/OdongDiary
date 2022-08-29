@@ -11,6 +11,10 @@ import SwiftUI
 struct DiaryEditView: View {
     @StateObject var viewModel: DiaryEditViewModel = DiaryEditViewModel()
     
+    init(_ type: EditViewType) {
+        viewModel.type = type
+    }
+    
     var body: some View {
         VStack {
             HStack {
@@ -24,8 +28,6 @@ struct DiaryEditView: View {
             Spacer()
             
             GeometryReader { proxy in
-                
-                
                 VStack {
                     VideoView()
                         .frame(height: proxy.size.width * 9/16)

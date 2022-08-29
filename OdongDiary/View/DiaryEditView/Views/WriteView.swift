@@ -17,6 +17,7 @@ struct WriteView: View {
             
             TextEditor(text: $viewModel.body)
                 .background(Rectangle().foregroundColor(.green))
+                .disabled(viewModel.type == .read)
         }
     }
 }
