@@ -40,7 +40,7 @@ struct HomeView: View {
                         Spacer()
                         
                         NavigationLink {
-                            DiaryEditView(.write)
+                            DiaryEditView(type: .write)
                         } label: {
                             RoundedRectangle(cornerRadius: 10)
                                 .foregroundColor(Color(hue: 0.294, saturation: 0.518, brightness: 0.789))

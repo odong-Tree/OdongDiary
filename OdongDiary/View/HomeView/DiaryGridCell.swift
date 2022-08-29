@@ -12,7 +12,7 @@ struct DiaryGridCell: View {
     var body: some View {
         GeometryReader { proxy in
             NavigationLink {
-                DiaryEditView(.read)
+                DiaryEditView(type: .read)
             } label: {
                 ZStack(alignment: .top) {
                     RoundedRectangle(cornerRadius: 10)

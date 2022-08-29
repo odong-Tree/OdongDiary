@@ -19,5 +19,6 @@ struct WriteView: View {
                 .background(Rectangle().foregroundColor(.green))
                 .disabled(viewModel.type == .read)
         }
+        .environmentObject(viewModel)
     }
 }

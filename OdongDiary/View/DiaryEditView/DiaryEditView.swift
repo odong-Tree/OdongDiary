@@ -9,12 +9,10 @@ import Foundation
 import SwiftUI
 
 struct DiaryEditView: View {
-    @StateObject var viewModel: DiaryEditViewModel = DiaryEditViewModel()
+    @StateObject private var viewModel: DiaryEditViewModel = DiaryEditViewModel()
     
-    init(_ type: EditViewType) {
-        viewModel.type = type
-    }
-    
+    let type: EditViewType
+
     var body: some View {
         VStack {
             HStack {
@@ -42,5 +40,8 @@ struct DiaryEditView: View {
         .padding(.horizontal)
         .padding(.bottom)
         .environmentObject(viewModel)
+        .onAppear {
+            viewModel.type = type
+        }
     }
 }
