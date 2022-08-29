@@ -41,6 +41,7 @@ struct HomeView: View {
                         
                         NavigationLink {
                             DiaryEditView()
+                                .environmentObject(DiaryEditViewModel())
                         } label: {
                             RoundedRectangle(cornerRadius: 10)
                                 .foregroundColor(Color(hue: 0.294, saturation: 0.518, brightness: 0.789))
