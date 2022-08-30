@@ -25,12 +25,10 @@ struct NavigationBackButton: View {
                 action()
             }
         } label: {
-            HStack {
-                Image(systemName: "chevron.backward")
-                    .resizable()
-                    .frame(width: 20, height: 20)
-                    .aspectRatio(contentMode: .fit)
-            }
+            Image(systemName: "chevron.backward")
+                .resizable()
+                .frame(width: 20, height: 20)
+                .aspectRatio(contentMode: .fit)
         }
     }
 }

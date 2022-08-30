@@ -20,7 +20,14 @@ struct DiaryEditView: View {
                 
                 Spacer()
                 
-                CompleteButton()
+                switch viewModel.type {
+                case .write:
+                    HStack {
+                        DeleteButton()
+                        CompleteButton()
+                    }
+                case .read: EditButton()
+                }
             }
             
             GeometryReader { proxy in
