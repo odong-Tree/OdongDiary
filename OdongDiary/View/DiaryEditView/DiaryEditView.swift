@@ -33,6 +33,7 @@ struct DiaryEditView: View {
             }
         }
         .navigationTitle("")
+        .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)
         .padding(.horizontal)
         .padding(.bottom)

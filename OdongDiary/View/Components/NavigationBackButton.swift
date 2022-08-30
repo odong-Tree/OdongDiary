@@ -32,6 +32,5 @@ struct NavigationBackButton: View {
                     .aspectRatio(contentMode: .fit)
             }
         }
-        .navigationBarHidden(true)
     }
 }

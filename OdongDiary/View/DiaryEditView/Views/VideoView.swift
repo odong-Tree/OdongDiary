@@ -12,25 +12,40 @@ import AVKit
 struct VideoView: View {
     @EnvironmentObject var viewModel: DiaryEditViewModel
     
+    @State private var isShowingSheet: Bool = false
+    @State private var isShowingVideoPicker: Bool = false
+    
     var body: some View {
-        if let video = viewModel.video {
-            VideoPlayer(player: AVPlayer(playerItem: video))
-        } else if let image = viewModel.image {
-            Image(uiImage: image)
+        if let videoURL = viewModel.videoURL {
+            CustomVideoPlayer(url: videoURL)
         } else {
             RoundedRectangle(cornerRadius: 10)
                 .overlay(
                     Button(action: {
-                        // Image Picker
+                        isShowingSheet = true
                     }, label: {
                         ZStack {
                             Circle()
-                                .frame(width: 60, height: 60)
                             
                             Image(systemName: "plus")
+                                .resizable()
+                                .foregroundColor(.white)
+                                .padding()
                         }
+                        .frame(width: 60, height: 60)
                     })
                 )
+                .confirmationDialog("Video", isPresented: $isShowingSheet) {
+                    Button("Album") { isShowingVideoPicker = true}
+                    Button("Cancel", role: .cancel) { isShowingSheet = false }
+                } message: {
+                    Text("Select Video")
+                }
+                .popover(isPresented: $isShowingVideoPicker) {
+                    VideoPickerView { url in
+                        viewModel.videoURL = url
+                    }
+                }
         }
     }
 }
