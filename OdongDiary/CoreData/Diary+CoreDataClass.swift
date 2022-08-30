@@ -1,26 +1,33 @@
 //
-//  Diary_CoreDataClass.swift
+//  Diary+CoreDataClass.swift
 //  OdongDiary
 //
-//  Created by odongnamu on 2022/08/30.
+//  Created by odongnamu on 2022/08/31.
+//
 //
 
 import Foundation
 import CoreData
 
-@objc(DiaryMO)
-public class DiaryMO: NSManagedObject {
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<DiaryMO> {
-        return NSFetchRequest<DiaryMO>(entityName: "Diary")
-    }
+@objc(Diary)
+public class Diary: NSManagedObject {
 
-    @NSManaged public var id: String
-    @NSManaged public var videoURL: URL
-    @NSManaged public var title: String
-    @NSManaged public var body: String
-    @NSManaged public var date: Date
 }
 
-extension DiaryMO : Identifiable {
+extension Diary {
+
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<Diary> {
+        return NSFetchRequest<Diary>(entityName: "Diary")
+    }
+
+    @NSManaged public var title: String
+    @NSManaged public var body: String
+    @NSManaged public var videoURL: URL
+    @NSManaged public var date: Date
+    @NSManaged public var id: String
+
+}
+
+extension Diary : Identifiable {
 
 }

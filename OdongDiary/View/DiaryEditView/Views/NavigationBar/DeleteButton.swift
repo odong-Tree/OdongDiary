@@ -10,6 +10,7 @@ import SwiftUI
 
 struct DeleteButton: View {
     @Environment(\.presentationMode) private var presentationMode
+    @Environment(\.managedObjectContext) var viewContext
     @EnvironmentObject var viewModel: DiaryEditViewModel
     
     var body: some View {

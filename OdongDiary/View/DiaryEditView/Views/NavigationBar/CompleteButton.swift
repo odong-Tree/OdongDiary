@@ -10,11 +10,13 @@ import SwiftUI
 
 struct CompleteButton: View {
     @Environment(\.presentationMode) private var presentationMode
+    @Environment(\.managedObjectContext) var viewContext
     @EnvironmentObject var viewModel: DiaryEditViewModel
     
     var body: some View {
         Button {
             // CoreData CRUD
+            CoreDataManager.save(viewContext, viewModel.model())
             presentationMode.wrappedValue.dismiss()
         } label: {
             RoundedRectangle(cornerRadius: 10)
@@ -25,6 +27,6 @@ struct CompleteButton: View {
     }
     
     private func isActive() -> Bool {
-        return viewModel.videoURL != nil && viewModel.title != "" && viewModel.body != "" && viewModel.date != ""
+        return viewModel.videoURL != nil && viewModel.title != "" && viewModel.body != ""
     }
 }

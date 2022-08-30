@@ -9,14 +9,16 @@ import Foundation
 import SwiftUI
 
 struct DiaryGridView: View {
-    let data = Array(1...100)
+    @FetchRequest(sortDescriptors: [], animation: .default)
+    private var diaryList: FetchedResults<Diary>
+    
     let columns = [GridItem(.flexible()), GridItem(.flexible())]
     
     var body: some View {
         ScrollView {
             LazyVGrid(columns: columns, spacing: 20) {
-                ForEach(data, id: \.self) { i in
-                    DiaryGridCell()
+                ForEach(diaryList, id: \.self) { diary in
+                    DiaryGridCell(diary: DiaryModel(fetchResult: diary))
                         .frame(height: UIScreen.main.bounds.height * 0.25)
                 }
             }

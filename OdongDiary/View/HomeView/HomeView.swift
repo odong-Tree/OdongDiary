@@ -9,6 +9,8 @@ import SwiftUI
 import CoreData
 
 struct HomeView: View {
+    @Environment(\.managedObjectContext) var viewContext
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -41,7 +43,7 @@ struct HomeView: View {
                         Spacer()
                         
                         NavigationLink {
-                            DiaryEditView(type: .write)
+                            DiaryEditView(type: .write, diary: nil)
                         } label: {
                             RoundedRectangle(cornerRadius: 10)
                                 .foregroundColor(Color(hue: 0.294, saturation: 0.518, brightness: 0.789))

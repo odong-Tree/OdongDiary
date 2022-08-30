@@ -9,9 +9,11 @@ import Foundation
 import SwiftUI
 
 struct DiaryEditView: View {
+    @Environment(\.managedObjectContext) var viewContext
     @StateObject private var viewModel: DiaryEditViewModel = DiaryEditViewModel()
     
     let type: EditViewType
+    let diary: DiaryModel?
 
     var body: some View {
         VStack(spacing: 10) {
@@ -47,6 +49,10 @@ struct DiaryEditView: View {
         .environmentObject(viewModel)
         .onAppear {
             viewModel.type = type
+            
+            if let diary = diary {
+                viewModel.readDiary(diary)
+            }
         }
     }
 }

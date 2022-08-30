@@ -1,36 +1,16 @@
 //
-//  PersistenceController.swift
+//  CoreDataManager.swift
 //  OdongDiary
 //
-//  Created by odongnamu on 2022/08/30.
+//  Created by odongnamu on 2022/08/31.
 //
 
 import Foundation
 import CoreData
 
-final class CoreDataManager {
-    static let shared = CoreDataManager()
-    private let entityName = "DiaryMO"
-    
-    let container: NSPersistentContainer
-    
-    lazy var list: [NSManagedObject] = {
-        return self.fetch()
-    }()
-    
-    private init() {
-        container = NSPersistentContainer(name: entityName)
-        
-        container.loadPersistentStores { (storeDescription, error) in
-            if let error = error as NSError? {
-                fatalError("Container load failed: \(error)")
-            }
-        }
-    }
-    
-    private func saveContext() {
-        let context = CoreDataManager.shared.container.viewContext
-        
+struct CoreDataManager {
+    static private let entityName = "Diary"
+    private func saveContext(_ context: NSManagedObjectContext) {
         if context.hasChanges {
             do {
                 try context.save()
@@ -41,9 +21,7 @@ final class CoreDataManager {
         }
     }
     
-    private func fetch() -> [NSManagedObject] {
-        let context = CoreDataManager.shared.container.viewContext
-        
+    static private func fetch(_ context: NSManagedObjectContext) -> [NSManagedObject] {
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: entityName)
         
         do {
@@ -57,8 +35,7 @@ final class CoreDataManager {
         
     }
     
-    private func fetch(of id: String) -> NSManagedObject {
-        let context = CoreDataManager.shared.container.viewContext
+    static private func fetch(_ context: NSManagedObjectContext, of id: String) -> NSManagedObject {
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: entityName)
         let predicate = NSPredicate(format: "id = %@", id)
         fetchRequest.predicate = predicate
@@ -75,8 +52,7 @@ final class CoreDataManager {
         }
     }
     
-    func save(_ diary: Diary) -> Bool {
-        let context = CoreDataManager.shared.container.viewContext
+    static func save(_ context: NSManagedObjectContext, _ diary: DiaryModel) -> Bool {
         let object = NSEntityDescription.insertNewObject(forEntityName: entityName, into: context)
         object.setValue(diary.id, forKey: "id")
         object.setValue(diary.videoURL, forKey: "videoURL")
@@ -86,7 +62,7 @@ final class CoreDataManager {
         
         do {
             try context.save()
-            self.list.append(object)
+//            self.list.append(object)
             return true
         } catch {
             context.rollback()
@@ -94,9 +70,8 @@ final class CoreDataManager {
         }
     }
     
-    func update(_ diary: Diary) -> Bool {
-        let context = CoreDataManager.shared.container.viewContext
-        let object = self.fetch(of: diary.id)
+    static func update(_ context: NSManagedObjectContext, _ diary: DiaryModel) -> Bool {
+        let object = self.fetch(context, of: diary.id)
         object.setValue(diary.videoURL, forKey: "videoURL")
         object.setValue(diary.title, forKey: "title")
         object.setValue(diary.body, forKey: "body")
@@ -111,9 +86,8 @@ final class CoreDataManager {
         }
     }
     
-    func delete(_ diary: Diary) -> Bool {
-        let context = CoreDataManager.shared.container.viewContext
-        let object = self.fetch(of: diary.id)
+    static func delete(_ context: NSManagedObjectContext, _ diary: DiaryModel) -> Bool {
+        let object = self.fetch(context, of: diary.id)
         context.delete(object)
         
         do {
