@@ -17,7 +17,7 @@ public class Diary: NSManagedObject {
     @NSManaged public var videoURL: URL
     @NSManaged public var title: String
     @NSManaged public var body: String
-    @NSManaged public var date: String
+    @NSManaged public var date: Date
 }
 
 extension Diary : Identifiable {
