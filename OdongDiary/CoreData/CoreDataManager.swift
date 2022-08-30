@@ -10,7 +10,7 @@ import CoreData
 
 final class CoreDataManager {
     static let shared = CoreDataManager()
-    private let entityName = "Diary"
+    private let entityName = "DiaryMO"
     
     let container: NSPersistentContainer
     
@@ -36,24 +36,53 @@ final class CoreDataManager {
                 try context.save()
             } catch {
                 let nserror = error as NSError
-                        fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
     }
     
-    func fetch() -> [NSManagedObject] {
+    private func fetch() -> [NSManagedObject] {
         let context = CoreDataManager.shared.container.viewContext
         
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: entityName)
-        let result = try! context.fetch(fetchRequest)
         
-        return result
+        do {
+            let result = try context.fetch(fetchRequest)
+            
+            return result
+        } catch {
+            print(error.localizedDescription)
+            return []
+        }
+        
     }
     
-    func save() -> Bool {
+    private func fetch(of id: String) -> NSManagedObject {
+        let context = CoreDataManager.shared.container.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: entityName)
+        let predicate = NSPredicate(format: "id = %@", id)
+        fetchRequest.predicate = predicate
+        
+        do {
+            guard let result = try context.fetch(fetchRequest).first else {
+                return NSManagedObject()
+            }
+            
+            return result
+        } catch  {
+            print(error.localizedDescription)
+            return NSManagedObject()
+        }
+    }
+    
+    func save(_ diary: Diary) -> Bool {
         let context = CoreDataManager.shared.container.viewContext
         let object = NSEntityDescription.insertNewObject(forEntityName: entityName, into: context)
-//        object.setValue
+        object.setValue(diary.id, forKey: "id")
+        object.setValue(diary.videoURL, forKey: "videoURL")
+        object.setValue(diary.title, forKey: "title")
+        object.setValue(diary.body, forKey: "body")
+        object.setValue(diary.date, forKey: "date")
         
         do {
             try context.save()
@@ -65,9 +94,13 @@ final class CoreDataManager {
         }
     }
     
-    func update(object: NSManagedObject) -> Bool {
+    func update(_ diary: Diary) -> Bool {
         let context = CoreDataManager.shared.container.viewContext
-        //        object.setValue
+        let object = self.fetch(of: diary.id)
+        object.setValue(diary.videoURL, forKey: "videoURL")
+        object.setValue(diary.title, forKey: "title")
+        object.setValue(diary.body, forKey: "body")
+        object.setValue(diary.date, forKey: "date")
         
         do {
             try context.save()
@@ -78,9 +111,9 @@ final class CoreDataManager {
         }
     }
     
-    func delete(object: NSManagedObject) -> Bool {
+    func delete(_ diary: Diary) -> Bool {
         let context = CoreDataManager.shared.container.viewContext
-        
+        let object = self.fetch(of: diary.id)
         context.delete(object)
         
         do {

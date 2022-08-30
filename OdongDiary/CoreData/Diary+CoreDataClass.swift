@@ -8,18 +8,19 @@
 import Foundation
 import CoreData
 
-@objc(Diary)
-public class Diary: NSManagedObject {
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Diary> {
-        return NSFetchRequest<Diary>(entityName: "Diary")
+@objc(DiaryMO)
+public class DiaryMO: NSManagedObject {
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<DiaryMO> {
+        return NSFetchRequest<DiaryMO>(entityName: "Diary")
     }
 
+    @NSManaged public var id: String
     @NSManaged public var videoURL: URL
     @NSManaged public var title: String
     @NSManaged public var body: String
     @NSManaged public var date: Date
 }
 
-extension Diary : Identifiable {
+extension DiaryMO : Identifiable {
 
 }

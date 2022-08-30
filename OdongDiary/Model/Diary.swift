@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+struct Diary {
+    let id: String
+    var title: String
+    var body: String
+    var date: Date
+    var videoURL: URL
+}
