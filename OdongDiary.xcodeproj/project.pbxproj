@@ -64,6 +64,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DE21E03128BE44CB005B258A /* VideoView */ = {
+			isa = PBXGroup;
+			children = (
+				DE3C979728BC45CA00ACAEF6 /* VideoView.swift */,
+				DE3C97AE28BE2B5800ACAEF6 /* CustomVideoPlayer.swift */,
+				DE3C97AA28BD278400ACAEF6 /* VideoPickerView.swift */,
+			);
+			path = VideoView;
+			sourceTree = "<group>";
+		};
+		DE21E03228BE44E6005B258A /* WriteView */ = {
+			isa = PBXGroup;
+			children = (
+				DE3C979928BC507200ACAEF6 /* WriteView.swift */,
+				DE3C979E28BCAACE00ACAEF6 /* TitleView.swift */,
+			);
+			path = WriteView;
+			sourceTree = "<group>";
+		};
 		DE3C978428BB9E3C00ACAEF6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -123,11 +142,8 @@
 			isa = PBXGroup;
 			children = (
 				DE3C97B228BE3E4B00ACAEF6 /* NavigationBar */,
-				DE3C979728BC45CA00ACAEF6 /* VideoView.swift */,
-				DE3C97AE28BE2B5800ACAEF6 /* CustomVideoPlayer.swift */,
-				DE3C97AA28BD278400ACAEF6 /* VideoPickerView.swift */,
-				DE3C979928BC507200ACAEF6 /* WriteView.swift */,
-				DE3C979E28BCAACE00ACAEF6 /* TitleView.swift */,
+				DE21E03128BE44CB005B258A /* VideoView */,
+				DE21E03228BE44E6005B258A /* WriteView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
