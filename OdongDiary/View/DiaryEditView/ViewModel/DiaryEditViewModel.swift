@@ -12,26 +12,20 @@ final class DiaryEditViewModel: ObservableObject {
     @Published var videoURL: URL?
     @Published var title: String = ""
     @Published var body: String = ""
-
+    @Published var id: String = UUID().uuidString
     @Published var date: Date = Date()
     
     @Published var type: EditViewType = .write
     
-    func model() -> DiaryModel {
-        return DiaryModel(id: UUID().uuidString, title: title, body: body, date: Date(), videoURL: videoURL!)
+    func makeDiaryModel() -> DiaryModel {
+        return DiaryModel(id: id, title: title, body: body, date: date, videoURL: videoURL!)
     }
     
     func readDiary(_ diary: DiaryModel) {
+        self.id = diary.id
         self.title = diary.title
         self.body = diary.body
         self.date = diary.date
         self.videoURL = diary.videoURL
     }
-    
-//    func clearDiary() {
-//        self.title = ""
-//        self.body = ""
-//        self.date = Date()
-//        self.videoURL = nil
-//    }
 }

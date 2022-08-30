@@ -37,7 +37,7 @@ struct CoreDataManager {
     
     static private func fetch(_ context: NSManagedObjectContext, of id: String) -> NSManagedObject {
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: entityName)
-        let predicate = NSPredicate(format: "id = %@", id)
+        let predicate = NSPredicate(format: "id == %@", id)
         fetchRequest.predicate = predicate
         
         do {
@@ -52,6 +52,19 @@ struct CoreDataManager {
         }
     }
     
+    static func hasObject(_ context: NSManagedObjectContext, of diary: DiaryModel) -> Bool {
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: entityName)
+        let predicate = NSPredicate(format: "id == %@", diary.id)
+        fetchRequest.predicate = predicate
+        
+        do {
+            return try !context.fetch(fetchRequest).isEmpty
+        } catch {
+            return false
+        }
+        
+    }
+    
     static func save(_ context: NSManagedObjectContext, _ diary: DiaryModel) -> Bool {
         let object = NSEntityDescription.insertNewObject(forEntityName: entityName, into: context)
         object.setValue(diary.id, forKey: "id")
@@ -62,7 +75,6 @@ struct CoreDataManager {
         
         do {
             try context.save()
-//            self.list.append(object)
             return true
         } catch {
             context.rollback()

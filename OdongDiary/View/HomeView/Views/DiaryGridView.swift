@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 
+
 struct DiaryGridView: View {
     @FetchRequest(sortDescriptors: [], animation: .default)
     private var diaryList: FetchedResults<Diary>

@@ -16,6 +16,7 @@ struct DeleteButton: View {
     var body: some View {
         Button {
             // CoreData CRUD
+            CoreDataManager.delete(viewContext, viewModel.makeDiaryModel())
             presentationMode.wrappedValue.dismiss()
         } label: {
             ZStack {

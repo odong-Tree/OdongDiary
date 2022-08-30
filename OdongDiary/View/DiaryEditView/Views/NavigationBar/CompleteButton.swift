@@ -16,7 +16,14 @@ struct CompleteButton: View {
     var body: some View {
         Button {
             // CoreData CRUD
-            CoreDataManager.save(viewContext, viewModel.model())
+            let diary = viewModel.makeDiaryModel()
+            
+            if CoreDataManager.hasObject(viewContext, of: diary) {
+                CoreDataManager.update(viewContext, diary)
+            } else {
+                CoreDataManager.save(viewContext, viewModel.makeDiaryModel())
+            }
+            
             presentationMode.wrappedValue.dismiss()
         } label: {
             RoundedRectangle(cornerRadius: 10)

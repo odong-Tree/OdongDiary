@@ -9,7 +9,15 @@ import Foundation
 import SwiftUI
 
 struct DiaryGridCell: View {
-    @State var diary: DiaryModel
+    var diary: DiaryModel
+    
+    private var didSave = NotificationCenter.default.publisher(for: .NSManagedObjectContextDidSave)
+    
+    @State private var isRefreshing = false
+    
+    init(diary: DiaryModel) {
+        self.diary = diary
+    }
     
     var body: some View {
         GeometryReader { proxy in
@@ -24,7 +32,7 @@ struct DiaryGridCell: View {
                     VStack(alignment: .leading) {
                         Image(systemName: "pencil")
                             .resizable()
-                            .frame(height: proxy.size.height * 3/5)
+                            .frame(height: proxy.size.height * 3/5 + (isRefreshing ? 0 : 0))
                             .background(Rectangle().foregroundColor(.orange))
                         
                         Spacer()
@@ -32,10 +40,10 @@ struct DiaryGridCell: View {
                         VStack(alignment: .leading, spacing: 4) {
                             Text("2022.08.29")
                             
-                            Text(diary.title)
+                            Text(diary.title + (isRefreshing ? "" : ""))
                                 .lineLimit(1)
                             
-                            Text(diary.body)
+                            Text(diary.body + (isRefreshing ? "" : ""))
                                 .lineLimit(1)
                         }
                         .font(.caption2)
@@ -43,6 +51,9 @@ struct DiaryGridCell: View {
                         .foregroundColor(.black.opacity(0.5))
                     }
                     .padding(10)
+                    .onReceive(self.didSave) { _ in
+                        self.isRefreshing.toggle()
+                    }
                 }
             }
         }
