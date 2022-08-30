@@ -121,7 +121,6 @@
 		DE3C978528BB9E4100ACAEF6 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				DE3C97A928BD24AF00ACAEF6 /* Components */,
 				DE3C978928BBA0E200ACAEF6 /* HomeView */,
 				DE3C978A28BBA0EE00ACAEF6 /* DiaryEditView */,
 				DE3C978B28BBA0F100ACAEF6 /* SettingView */,
@@ -193,20 +192,13 @@
 			path = App;
 			sourceTree = "<group>";
 		};
-		DE3C97A928BD24AF00ACAEF6 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				DE3C979328BBD77000ACAEF6 /* NavigationBackButton.swift */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
 		DE3C97B228BE3E4B00ACAEF6 /* NavigationBar */ = {
 			isa = PBXGroup;
 			children = (
 				DE3C979528BBE5E300ACAEF6 /* CompleteButton.swift */,
 				DE3C97B028BE2F3F00ACAEF6 /* EditButton.swift */,
 				DE3C97B328BE3E6B00ACAEF6 /* DeleteButton.swift */,
+				DE3C979328BBD77000ACAEF6 /* NavigationBackButton.swift */,
 			);
 			path = NavigationBar;
 			sourceTree = "<group>";
