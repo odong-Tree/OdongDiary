@@ -26,6 +26,7 @@ struct DiaryEditView: View {
                 case .write:
                     HStack {
                         DeleteButton()
+                            .isHidden(type == .write && diary == nil)
                         CompleteButton()
                     }
                 case .read: EditButton()

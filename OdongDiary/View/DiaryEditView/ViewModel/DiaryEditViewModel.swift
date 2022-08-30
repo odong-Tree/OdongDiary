@@ -9,7 +9,7 @@ import Foundation
 import AVKit
 
 final class DiaryEditViewModel: ObservableObject {
-    @Published var videoURL: URL?
+    @Published var videoURL: URL!
     @Published var title: String = ""
     @Published var body: String = ""
     @Published var id: String = UUID().uuidString
@@ -18,7 +18,7 @@ final class DiaryEditViewModel: ObservableObject {
     @Published var type: EditViewType = .write
     
     func makeDiaryModel() -> DiaryModel {
-        return DiaryModel(id: id, title: title, body: body, date: date, videoURL: videoURL!)
+        return DiaryModel(id: id, title: title, body: body, date: date, videoURL: videoURL)
     }
     
     func readDiary(_ diary: DiaryModel) {
