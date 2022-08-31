@@ -11,6 +11,7 @@ import SwiftUI
 struct NavigationBackButton: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @EnvironmentObject var viewModel: DiaryEditViewModel
+    @EnvironmentObject var colorSet: ColorSet
     
     @State var isShowingBackButtonAlert: Bool = false
     

@@ -10,6 +10,7 @@ import SwiftUI
 
 struct WriteView: View {
     @EnvironmentObject var viewModel: DiaryEditViewModel
+    @EnvironmentObject var colorSet: ColorSet
     
     init() {
         UITextView.appearance().backgroundColor = .clear
@@ -23,7 +24,7 @@ struct WriteView: View {
             
             if viewModel.type == .write {
                 TextEditor(text: $viewModel.body)
-                    .background(ColorSet.main.third())
+                    .background(colorSet.third())
             } else if viewModel.type == .read {
                 ScrollView {
                     Text(viewModel.body)
@@ -31,5 +32,6 @@ struct WriteView: View {
             }
         }
         .environmentObject(viewModel)
+        .environmentObject(colorSet)
     }
 }

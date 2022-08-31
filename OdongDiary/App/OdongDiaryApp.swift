@@ -11,13 +11,15 @@ import SwiftUI
 struct OdongDiaryApp: App {
     
     let persistenceController = PersistenceController.shared
+    @StateObject var colorSet = ColorSet()
     
     var body: some Scene {
         WindowGroup {
             HomeView()
-                .background(ColorSet.main.third())
+                .background(colorSet.third())
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .environmentObject(HomeViewModel())
+                .environmentObject(colorSet)
         }
     }
 }

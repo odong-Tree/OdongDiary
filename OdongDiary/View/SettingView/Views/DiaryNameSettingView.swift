@@ -10,13 +10,15 @@ import SwiftUI
 
 struct DiaryNameSettingView: View {
     @EnvironmentObject var viewModel: HomeViewModel
+    @EnvironmentObject var colorSet: ColorSet
+    
     var body: some View {
         ZStack {
-            ColorSet.main.third()
+            colorSet.third()
             
             VStack(alignment: .leading) {
                 Text("Diary Name")
-                    .foregroundColor(ColorSet.mainBlack)
+                    .foregroundColor(colorSet.mainBlack)
                     .font(.caption)
                 
                 TextField("Diary Name", text: $viewModel.diaryName)

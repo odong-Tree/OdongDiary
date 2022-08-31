@@ -12,6 +12,7 @@ struct DeleteButton: View {
     @Environment(\.presentationMode) private var presentationMode
     @Environment(\.managedObjectContext) var viewContext
     @EnvironmentObject var viewModel: DiaryEditViewModel
+    @EnvironmentObject var colorSet: ColorSet
     
     @State var isShowingDeleteAlert: Bool = false
     
@@ -21,14 +22,14 @@ struct DeleteButton: View {
         } label: {
             ZStack {
                 RoundedRectangle(cornerRadius: 10)
-                    .foregroundColor(ColorSet.main.second())
+                    .foregroundColor(colorSet.second())
                     .frame(width: 40, height: 40)
                 
                 Image(systemName: "trash")
                     .resizable()
                     .frame(width: 20, height: 20)
                     .aspectRatio(contentMode: .fit)
-                    .foregroundColor(ColorSet.mainBlack)
+                    .foregroundColor(colorSet.mainBlack)
             }
         }
         .alert(isPresented: $isShowingDeleteAlert) {

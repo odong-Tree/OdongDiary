@@ -10,6 +10,8 @@ import SwiftUI
 
 struct DiaryEditView: View {
     @Environment(\.managedObjectContext) var viewContext
+    @EnvironmentObject var colorSet: ColorSet
+    
     @StateObject private var viewModel: DiaryEditViewModel = DiaryEditViewModel()
     
     let type: EditViewType
@@ -19,7 +21,7 @@ struct DiaryEditView: View {
         VStack(spacing: 10) {
             HStack {
                 NavigationBackButton()
-                    .tint(ColorSet.main.first())
+                    .tint(colorSet.first())
                 
                 Spacer()
                 
@@ -48,8 +50,9 @@ struct DiaryEditView: View {
         .navigationBarBackButtonHidden(true)
         .padding(.horizontal)
         .padding(.bottom)
-        .background(ColorSet.main.third())
+        .background(colorSet.third())
         .environmentObject(viewModel)
+        .environmentObject(colorSet)
         .onAppear {
             viewModel.type = type
             

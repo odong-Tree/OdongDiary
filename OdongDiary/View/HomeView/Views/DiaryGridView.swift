@@ -11,6 +11,7 @@ import CoreData
 
 struct DiaryGridView: View {
     @EnvironmentObject var viewModel: HomeViewModel
+    @EnvironmentObject var colorSet: ColorSet
     
     @FetchRequest private var diaryList: FetchedResults<Diary>
     
@@ -29,5 +30,7 @@ struct DiaryGridView: View {
                 }
             }
         }
+        .environmentObject(viewModel)
+        .environmentObject(colorSet)
     }
 }

@@ -9,10 +9,7 @@ import Foundation
 import SwiftUI
 
 final class ColorSet: ObservableObject {
-    static var main: ColorSet = ColorSet()
-    static let mainBlack = Color.black.opacity(0.6)
-    
-    private init() { }
+    let mainBlack = Color.black.opacity(0.6)
     
     @Published var thema: ColorPalette = .yellow
     

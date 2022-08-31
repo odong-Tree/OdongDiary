@@ -10,6 +10,8 @@ import SwiftUI
 
 struct DiaryGridCell: View {
     @EnvironmentObject var viewModel: HomeViewModel
+    @EnvironmentObject var colorSet: ColorSet
+    
     var diary: DiaryModel
     
     private var didSave = NotificationCenter.default.publisher(for: .NSManagedObjectContextDidSave)
@@ -24,6 +26,7 @@ struct DiaryGridCell: View {
         GeometryReader { proxy in
             NavigationLink {
                 DiaryEditView(type: .read, diary: diary)
+                    .environmentObject(colorSet)
             } label: {
                 ZStack(alignment: .top) {
                     RoundedRectangle(cornerRadius: 10)
@@ -47,10 +50,10 @@ struct DiaryGridCell: View {
                         }
                         .font(.caption2)
                         .frame(alignment: .leading)
-                        .foregroundColor(ColorSet.mainBlack)
+                        .foregroundColor(colorSet.mainBlack)
                     }
                     .padding(10)
-                    .background(ColorSet.main.second())
+                    .background(colorSet.second())
                     .onReceive(self.didSave) { _ in
                         self.isRefreshing.toggle()
                     }

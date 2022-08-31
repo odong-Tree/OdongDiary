@@ -10,6 +10,7 @@ import SwiftUI
 
 struct TitleView: View {
     @EnvironmentObject var viewModel: DiaryEditViewModel
+    @EnvironmentObject var colorSet: ColorSet
     
     var body: some View {
         VStack(alignment: .leading, spacing: 5) {

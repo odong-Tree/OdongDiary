@@ -9,6 +9,8 @@ import Foundation
 import SwiftUI
 
 struct ColorButton: View {
+    @EnvironmentObject var colorSet: ColorSet
+    
     let thema: ColorPalette
     let action: (ColorPalette) -> Void
     
@@ -24,11 +26,13 @@ struct ColorButton: View {
 }
 
 struct PaletteView: View {
+    @EnvironmentObject var colorSet: ColorSet
+    
     var body: some View {
         HStack {
             ForEach(ColorPalette.allCases, id: \.color) { i in
                 ColorButton(thema: i) { color in
-                    ColorSet.main.change(to: color)
+                    colorSet.change(to: color)
                 }
             }
         }

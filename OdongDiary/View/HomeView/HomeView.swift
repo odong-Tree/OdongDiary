@@ -11,6 +11,7 @@ import CoreData
 struct HomeView: View {
     @Environment(\.managedObjectContext) var viewContext
     @EnvironmentObject var viewModel: HomeViewModel
+    @EnvironmentObject var colorSet: ColorSet
     
     @State var isShowingSettingView: Bool = false
     
@@ -39,10 +40,11 @@ struct HomeView: View {
                     }
                     .popover(isPresented: $isShowingSettingView) {
                         SettingView()
-                            .background(ColorSet.main.second())
+                            .background(colorSet.second())
                     }
                 }
-                .foregroundColor(ColorSet.mainBlack)
+                .foregroundColor(colorSet.mainBlack)
+                .padding(.horizontal)
                 
                 ZStack {
                     DiaryGridView(sortDescriptor: viewModel.sortType.sortDiscriptor)
@@ -54,21 +56,22 @@ struct HomeView: View {
                             DiaryEditView(type: .write, diary: nil)
                         } label: {
                             RoundedRectangle(cornerRadius: 10)
-                                .foregroundColor(ColorSet.main.first())
+                                .foregroundColor(colorSet.first())
                                 .frame(width: 300, height: 60)
                                 .overlay(
                                     Text("일기쓰기")
-                                        .font(.title3).foregroundColor(ColorSet.mainBlack)
+                                        .font(.title3).foregroundColor(colorSet.mainBlack)
                                          )
                         }
                     }
                 }
+                .padding(.horizontal)
             }
             .navigationBarHidden(true)
-            .background(ColorSet.main.third())
+            .background(colorSet.third())
             .environmentObject(viewModel)
+            .environmentObject(colorSet)
         }
-        .padding(.horizontal)
     }
 }
 

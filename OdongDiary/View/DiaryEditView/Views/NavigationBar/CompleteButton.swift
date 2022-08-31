@@ -12,6 +12,7 @@ struct CompleteButton: View {
     @Environment(\.presentationMode) private var presentationMode
     @Environment(\.managedObjectContext) var viewContext
     @EnvironmentObject var viewModel: DiaryEditViewModel
+    @EnvironmentObject var colorSet: ColorSet
     
     var body: some View {
         Button {
@@ -45,8 +46,8 @@ struct CompleteButton: View {
             presentationMode.wrappedValue.dismiss()
         } label: {
             RoundedRectangle(cornerRadius: 10)
-                .foregroundColor(ColorSet.main.first())
-                .overlay(Text("완료").foregroundColor(ColorSet.mainBlack))
+                .foregroundColor(colorSet.first())
+                .overlay(Text("완료").foregroundColor(colorSet.mainBlack))
                 .frame(width: 80, height: 40)
         }
         .disabled(!isActive())

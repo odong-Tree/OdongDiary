@@ -10,14 +10,15 @@ import SwiftUI
 
 struct ThemaColorSettingView: View {
     @EnvironmentObject var viewModel: HomeViewModel
+    @EnvironmentObject var colorSet: ColorSet
     
     var body: some View {
         ZStack {
-            ColorSet.main.third()
+            colorSet.third()
             
             VStack(alignment: .leading) {
                 Text("Thema Color")
-                    .foregroundColor(ColorSet.mainBlack)
+                    .foregroundColor(colorSet.mainBlack)
                     .font(.caption)
                 
                 HStack {
@@ -32,5 +33,6 @@ struct ThemaColorSettingView: View {
         }
         .cornerRadius(10)
         .fixedSize(horizontal: false, vertical: true)
+        .environmentObject(colorSet)
     }
 }

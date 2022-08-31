@@ -10,14 +10,15 @@ import SwiftUI
 
 struct EditButton: View {
     @EnvironmentObject var viewModel: DiaryEditViewModel
+    @EnvironmentObject var colorSet: ColorSet
     
     var body: some View {
         Button {
             viewModel.type = .write
         } label: {
             RoundedRectangle(cornerRadius: 10)
-                .foregroundColor(ColorSet.main.second())
-                .overlay(Text("편집").foregroundColor(ColorSet.mainBlack))
+                .foregroundColor(colorSet.second())
+                .overlay(Text("편집").foregroundColor(colorSet.mainBlack))
                 .frame(width: 80, height: 40)
         }
     }

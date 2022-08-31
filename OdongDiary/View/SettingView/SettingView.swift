@@ -11,6 +11,7 @@ import SwiftUI
 struct SettingView: View {
     @Environment(\.presentationMode) private var presentationMode
     @EnvironmentObject var viewModel: HomeViewModel
+    @EnvironmentObject var colorSet: ColorSet
     
     var body: some View {
         VStack {
@@ -22,8 +23,8 @@ struct SettingView: View {
                 } label: {
                     RoundedRectangle(cornerRadius: 10)
                         .frame(width: 80, height: 40)
-                        .foregroundColor(ColorSet.main.first())
-                        .overlay(Text("완료").foregroundColor(ColorSet.mainBlack))
+                        .foregroundColor(colorSet.first())
+                        .overlay(Text("완료").foregroundColor(colorSet.mainBlack))
                 }
             }
             
@@ -34,5 +35,7 @@ struct SettingView: View {
             Spacer()
         }
         .padding()
+        .environmentObject(viewModel)
+        .environmentObject(colorSet)
     }
 }

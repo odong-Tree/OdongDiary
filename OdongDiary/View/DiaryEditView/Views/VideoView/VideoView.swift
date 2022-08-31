@@ -11,6 +11,7 @@ import AVKit
 
 struct VideoView: View {
     @EnvironmentObject var viewModel: DiaryEditViewModel
+    @EnvironmentObject var colorSet: ColorSet
     
     @State private var isShowingSheet: Bool = false
     @State private var isShowingVideoPicker: Bool = false
@@ -26,7 +27,7 @@ struct VideoView: View {
                     }, label: {
                         ZStack {
                             Circle()
-                                .foregroundColor(ColorSet.main.first())
+                                .foregroundColor(colorSet.first())
                             
                             Image(systemName: "plus")
                                 .resizable()
