@@ -7,13 +7,20 @@
 
 import Foundation
 import SwiftUI
+import CoreData
 
+let sortDecriptorsKey = "sortDescriptors"
 
 struct DiaryGridView: View {
-    @FetchRequest(sortDescriptors: [], animation: .default)
-    private var diaryList: FetchedResults<Diary>
+    @EnvironmentObject var viewModel: HomeViewModel
+    
+    @FetchRequest private var diaryList: FetchedResults<Diary>
     
     let columns = [GridItem(.flexible()), GridItem(.flexible())]
+    
+    init(sortDescriptor: NSSortDescriptor) {
+        _diaryList = FetchRequest(entity: Diary.entity(), sortDescriptors: [sortDescriptor])
+    }
     
     var body: some View {
         ScrollView {

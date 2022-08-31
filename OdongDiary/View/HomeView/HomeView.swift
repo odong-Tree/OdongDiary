@@ -10,13 +10,16 @@ import CoreData
 
 struct HomeView: View {
     @Environment(\.managedObjectContext) var viewContext
+    @EnvironmentObject var viewModel: HomeViewModel
+    
     
     var body: some View {
         NavigationView {
             VStack {
                 HStack {
-                    Button {
-                        
+                    Menu {
+                        Button("최신순") { viewModel.sortType = .dateAscending }
+                        Button("오래된순") { viewModel.sortType = .dateDesending }
                     } label: {
                         Image(systemName: "line.3.horizontal.decrease")
                     }
@@ -37,7 +40,7 @@ struct HomeView: View {
                 .foregroundColor(.black)
                 
                 ZStack {
-                    DiaryGridView()
+                    DiaryGridView(sortDescriptor: viewModel.sortType.sortDiscriptor)
                     
                     VStack {
                         Spacer()
@@ -57,6 +60,7 @@ struct HomeView: View {
                 }
             }
             .navigationBarHidden(true)
+            .environmentObject(viewModel)
         }
         .padding(.horizontal)
     }
