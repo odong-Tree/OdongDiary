@@ -16,6 +16,8 @@
 		DE21E07728BEAE18005B258A /* URL+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21E07628BEAE18005B258A /* URL+.swift */; };
 		DE21E07928BEAEFF005B258A /* VideoFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21E07828BEAEFF005B258A /* VideoFileManager.swift */; };
 		DE21E08028BF15A7005B258A /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21E07F28BF15A7005B258A /* Date+.swift */; };
+		DE21E08328BF296E005B258A /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21E08228BF296E005B258A /* ColorPalette.swift */; };
+		DE21E08728BF3AE9005B258A /* ColorSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21E08628BF3AE9005B258A /* ColorSet.swift */; };
 		DE3C978128BB966D00ACAEF6 /* DiaryEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3C978028BB966D00ACAEF6 /* DiaryEditView.swift */; };
 		DE3C978328BB9CAC00ACAEF6 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3C978228BB9CAC00ACAEF6 /* SettingView.swift */; };
 		DE3C978828BBA0DD00ACAEF6 /* DiaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3C978728BBA0DD00ACAEF6 /* DiaryModel.swift */; };
@@ -46,6 +48,8 @@
 		DE21E07628BEAE18005B258A /* URL+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+.swift"; sourceTree = "<group>"; };
 		DE21E07828BEAEFF005B258A /* VideoFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoFileManager.swift; sourceTree = "<group>"; };
 		DE21E07F28BF15A7005B258A /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
+		DE21E08228BF296E005B258A /* ColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
+		DE21E08628BF3AE9005B258A /* ColorSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSet.swift; sourceTree = "<group>"; };
 		DE3C978028BB966D00ACAEF6 /* DiaryEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryEditView.swift; sourceTree = "<group>"; };
 		DE3C978228BB9CAC00ACAEF6 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		DE3C978728BBA0DD00ACAEF6 /* DiaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryModel.swift; sourceTree = "<group>"; };
@@ -141,6 +145,15 @@
 				DE21E07828BEAEFF005B258A /* VideoFileManager.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		DE21E08128BF28B7005B258A /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				DE21E08228BF296E005B258A /* ColorPalette.swift */,
+				DE21E08628BF3AE9005B258A /* ColorSet.swift */,
+			);
+			path = Design;
 			sourceTree = "<group>";
 		};
 		DE3C978428BB9E3C00ACAEF6 /* Model */ = {
@@ -262,6 +275,7 @@
 				DE3C978528BB9E4100ACAEF6 /* View */,
 				DE21E07A28BEAF08005B258A /* Util */,
 				DE21E07528BEAE07005B258A /* Extension */,
+				DE21E08128BF28B7005B258A /* Design */,
 				DE52FBCF28BB66BC00E5A2F8 /* Assets.xcassets */,
 				DE52FBD128BB66BC00E5A2F8 /* Preview Content */,
 			);
@@ -352,6 +366,7 @@
 				DE3C979028BBA5A500ACAEF6 /* DiaryGridView.swift in Sources */,
 				DE3C979628BBE5E300ACAEF6 /* CompleteButton.swift in Sources */,
 				DE21E08028BF15A7005B258A /* Date+.swift in Sources */,
+				DE21E08328BF296E005B258A /* ColorPalette.swift in Sources */,
 				DE3C978828BBA0DD00ACAEF6 /* DiaryModel.swift in Sources */,
 				DE3C978328BB9CAC00ACAEF6 /* SettingView.swift in Sources */,
 				DE21E07928BEAEFF005B258A /* VideoFileManager.swift in Sources */,
@@ -360,6 +375,7 @@
 				DE3C979C28BC7DEC00ACAEF6 /* DiaryEditViewModel.swift in Sources */,
 				DE3C979428BBD77000ACAEF6 /* NavigationBackButton.swift in Sources */,
 				DE3C979828BC45CA00ACAEF6 /* VideoView.swift in Sources */,
+				DE21E08728BF3AE9005B258A /* ColorSet.swift in Sources */,
 				DE3C979228BBB39A00ACAEF6 /* DiaryGridCell.swift in Sources */,
 				DE52FBCC28BB66BB00E5A2F8 /* OdongDiaryApp.swift in Sources */,
 				DE3C97AB28BD278400ACAEF6 /* VideoPickerView.swift in Sources */,

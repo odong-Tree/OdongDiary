@@ -16,8 +16,8 @@ struct EditButton: View {
             viewModel.type = .write
         } label: {
             RoundedRectangle(cornerRadius: 10)
-                .foregroundColor(.orange)
-                .overlay(Text("편집").foregroundColor(.white))
+                .foregroundColor(ColorSet.shared.second())
+                .overlay(Text("편집").foregroundColor(ColorSet.mainBlack))
                 .frame(width: 80, height: 40)
         }
     }

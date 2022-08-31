@@ -19,6 +19,7 @@ struct DiaryEditView: View {
         VStack(spacing: 10) {
             HStack {
                 NavigationBackButton()
+                    .tint(ColorSet.shared.first())
                 
                 Spacer()
                 
@@ -47,6 +48,7 @@ struct DiaryEditView: View {
         .navigationBarBackButtonHidden(true)
         .padding(.horizontal)
         .padding(.bottom)
+        .background(ColorSet.shared.third())
         .environmentObject(viewModel)
         .onAppear {
             viewModel.type = type

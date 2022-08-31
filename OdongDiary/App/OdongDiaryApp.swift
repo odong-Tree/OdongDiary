@@ -15,6 +15,7 @@ struct OdongDiaryApp: App {
     var body: some Scene {
         WindowGroup {
             HomeView()
+                .background(ColorSet.shared.third())
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .environmentObject(HomeViewModel())
         }

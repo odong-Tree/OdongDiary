@@ -26,7 +26,6 @@ struct DiaryGridCell: View {
             } label: {
                 ZStack(alignment: .top) {
                     RoundedRectangle(cornerRadius: 10)
-                        .fill(.yellow.opacity(0.7))
                         .frame(height: proxy.size.height)
                     
                     VStack(alignment: .leading) {
@@ -47,13 +46,15 @@ struct DiaryGridCell: View {
                         }
                         .font(.caption2)
                         .frame(alignment: .leading)
-                        .foregroundColor(.black.opacity(0.5))
+                        .foregroundColor(ColorSet.mainBlack)
                     }
                     .padding(10)
+                    .background(ColorSet.shared.second())
                     .onReceive(self.didSave) { _ in
                         self.isRefreshing.toggle()
                     }
                 }
+                .cornerRadius(10)
             }
         }
     }

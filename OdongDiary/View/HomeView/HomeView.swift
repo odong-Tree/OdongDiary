@@ -36,7 +36,7 @@ struct HomeView: View {
                         Image(systemName: "gearshape.fill")
                     }
                 }
-                .foregroundColor(.black)
+                .foregroundColor(ColorSet.mainBlack)
                 
                 ZStack {
                     DiaryGridView(sortDescriptor: viewModel.sortType.sortDiscriptor)
@@ -48,17 +48,18 @@ struct HomeView: View {
                             DiaryEditView(type: .write, diary: nil)
                         } label: {
                             RoundedRectangle(cornerRadius: 10)
-                                .foregroundColor(Color(hue: 0.294, saturation: 0.518, brightness: 0.789))
+                                .foregroundColor(ColorSet.shared.first())
                                 .frame(width: 300, height: 60)
                                 .overlay(
                                     Text("일기쓰기")
-                                        .font(.title3).foregroundColor(.white)
+                                        .font(.title3).foregroundColor(ColorSet.mainBlack)
                                          )
                         }
                     }
                 }
             }
             .navigationBarHidden(true)
+            .background(ColorSet.shared.third())
             .environmentObject(viewModel)
         }
         .padding(.horizontal)

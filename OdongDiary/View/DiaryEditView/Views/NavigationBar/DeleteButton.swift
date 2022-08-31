@@ -21,14 +21,14 @@ struct DeleteButton: View {
         } label: {
             ZStack {
                 RoundedRectangle(cornerRadius: 10)
-                    .foregroundColor(.brown)
+                    .foregroundColor(ColorSet.shared.second())
                     .frame(width: 40, height: 40)
                 
                 Image(systemName: "trash")
                     .resizable()
                     .frame(width: 20, height: 20)
                     .aspectRatio(contentMode: .fit)
-                    .foregroundColor(.white)
+                    .foregroundColor(ColorSet.mainBlack)
             }
         }
         .alert(isPresented: $isShowingDeleteAlert) {

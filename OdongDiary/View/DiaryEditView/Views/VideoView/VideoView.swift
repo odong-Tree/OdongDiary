@@ -26,6 +26,7 @@ struct VideoView: View {
                     }, label: {
                         ZStack {
                             Circle()
+                                .foregroundColor(ColorSet.shared.first())
                             
                             Image(systemName: "plus")
                                 .resizable()
