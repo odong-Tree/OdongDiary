@@ -15,6 +15,8 @@ struct WriteView: View {
         VStack(alignment: .leading) {
             TitleView()
             
+            Divider()
+            
             if viewModel.type == .write {
                 TextEditor(text: $viewModel.body)
             } else if viewModel.type == .read {
