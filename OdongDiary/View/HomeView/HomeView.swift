@@ -12,6 +12,8 @@ struct HomeView: View {
     @Environment(\.managedObjectContext) var viewContext
     @EnvironmentObject var viewModel: HomeViewModel
     
+    @State var isShowingSettingView: Bool = false
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -25,15 +27,18 @@ struct HomeView: View {
                     
                     Spacer()
                     
-                    Text("Odong Diary")
+                    Text(viewModel.diaryName)
                         .font(.title)
                     
                     Spacer()
                     
-                    NavigationLink {
-                        SettingView()
+                    Button {
+                        isShowingSettingView = true
                     } label: {
                         Image(systemName: "gearshape.fill")
+                    }
+                    .popover(isPresented: $isShowingSettingView) {
+                        SettingView()
                     }
                 }
                 .foregroundColor(ColorSet.mainBlack)
