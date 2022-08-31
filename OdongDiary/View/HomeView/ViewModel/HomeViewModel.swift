@@ -17,9 +17,9 @@ final class HomeViewModel: ObservableObject {
         var sortDiscriptor: NSSortDescriptor {
             switch self {
             case .dateAscending:
-                return NSSortDescriptor(keyPath: \Diary.date, ascending: true)
-            case .dateDesending:
                 return NSSortDescriptor(keyPath: \Diary.date, ascending: false)
+            case .dateDesending:
+                return NSSortDescriptor(keyPath: \Diary.date, ascending: true)
             }
         }
     }
