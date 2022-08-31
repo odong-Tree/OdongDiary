@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import AVFoundation
 
 struct DiaryModel {
     let id: String
@@ -32,5 +33,21 @@ struct DiaryModel {
         self.date = fetchResult.date
         self.fileName = fetchResult.fileName
         self.videoURL = VideoFileManager.shared.fileURL(fileName: fileName)
+    }
+    
+    func thumbnailImage() -> UIImage {
+        let asset = AVURLAsset(url: videoURL)
+        let imageGenerator = AVAssetImageGenerator(asset: asset)
+        imageGenerator.appliesPreferredTrackTransform = true
+        
+        let thumbnail: UIImage
+        
+        do {
+            thumbnail = try UIImage(cgImage: imageGenerator.copyCGImage(at: CMTime(seconds: 0, preferredTimescale: 1), actualTime: nil))
+        } catch {
+            thumbnail = UIImage()
+        }
+        
+        return thumbnail
     }
 }

@@ -30,10 +30,9 @@ struct DiaryGridCell: View {
                         .frame(height: proxy.size.height)
                     
                     VStack(alignment: .leading) {
-                        Image(systemName: "pencil")
+                        Image(uiImage: diary.thumbnailImage())
                             .resizable()
                             .frame(height: proxy.size.height * 3/5 + (isRefreshing ? 0 : 0))
-                            .background(Rectangle().foregroundColor(.orange))
                         
                         Spacer()
                         

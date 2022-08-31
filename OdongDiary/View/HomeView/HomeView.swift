@@ -12,7 +12,6 @@ struct HomeView: View {
     @Environment(\.managedObjectContext) var viewContext
     @EnvironmentObject var viewModel: HomeViewModel
     
-    
     var body: some View {
         NavigationView {
             VStack {

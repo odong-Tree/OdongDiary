@@ -9,8 +9,6 @@ import Foundation
 import SwiftUI
 import CoreData
 
-let sortDecriptorsKey = "sortDescriptors"
-
 struct DiaryGridView: View {
     @EnvironmentObject var viewModel: HomeViewModel
     
