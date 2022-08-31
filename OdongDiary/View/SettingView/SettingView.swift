@@ -22,25 +22,14 @@ struct SettingView: View {
                 } label: {
                     RoundedRectangle(cornerRadius: 10)
                         .frame(width: 80, height: 40)
-                        .foregroundColor(ColorSet.shared.first())
+                        .foregroundColor(ColorSet.main.first())
                         .overlay(Text("완료").foregroundColor(ColorSet.mainBlack))
                 }
             }
             
-            ZStack {
-                RoundedRectangle(cornerRadius: 10)
-                    .foregroundColor(ColorSet.shared.second())
-                    .frame(height: 100)
-                
-                VStack(alignment: .leading) {
-                    Text("Diary Name")
-                        .foregroundColor(ColorSet.mainBlack)
-                        .font(.caption)
-                    
-                    TextField("Diary Name", text: $viewModel.diaryName)
-                }
-                .padding()
-            }
+            DiaryNameSettingView()
+            
+            ThemaColorSettingView()
             
             Spacer()
         }

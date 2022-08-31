@@ -8,27 +8,27 @@
 import Foundation
 import SwiftUI
 
-final class ColorSet {
-    static let shared = ColorSet()
+final class ColorSet: ObservableObject {
+    static var main: ColorSet = ColorSet()
     static let mainBlack = Color.black.opacity(0.6)
     
     private init() { }
     
-    private var main: ColorPalette = .yellow
+    @Published var thema: ColorPalette = .yellow
     
     func first() -> Color {
-        main.color.first
+        thema.color.first
     }
-    
+
     func second() -> Color {
-        main.color.second
+        thema.color.second
     }
-    
+
     func third() -> Color {
-        main.color.third
+        thema.color.third
     }
     
     func change(to color: ColorPalette) {
-        main = color
+        thema = color
     }
 }

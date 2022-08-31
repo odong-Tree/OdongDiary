@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 struct DiaryGridCell: View {
+    @EnvironmentObject var viewModel: HomeViewModel
     var diary: DiaryModel
     
     private var didSave = NotificationCenter.default.publisher(for: .NSManagedObjectContextDidSave)
@@ -49,7 +50,7 @@ struct DiaryGridCell: View {
                         .foregroundColor(ColorSet.mainBlack)
                     }
                     .padding(10)
-                    .background(ColorSet.shared.second())
+                    .background(ColorSet.main.second())
                     .onReceive(self.didSave) { _ in
                         self.isRefreshing.toggle()
                     }

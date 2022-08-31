@@ -39,6 +39,7 @@ struct HomeView: View {
                     }
                     .popover(isPresented: $isShowingSettingView) {
                         SettingView()
+                            .background(ColorSet.main.second())
                     }
                 }
                 .foregroundColor(ColorSet.mainBlack)
@@ -53,7 +54,7 @@ struct HomeView: View {
                             DiaryEditView(type: .write, diary: nil)
                         } label: {
                             RoundedRectangle(cornerRadius: 10)
-                                .foregroundColor(ColorSet.shared.first())
+                                .foregroundColor(ColorSet.main.first())
                                 .frame(width: 300, height: 60)
                                 .overlay(
                                     Text("일기쓰기")
@@ -64,7 +65,7 @@ struct HomeView: View {
                 }
             }
             .navigationBarHidden(true)
-            .background(ColorSet.shared.third())
+            .background(ColorSet.main.third())
             .environmentObject(viewModel)
         }
         .padding(.horizontal)

@@ -13,6 +13,7 @@ enum ColorPalette {
     case pink
     case orange
     case yellow
+    case green
     case blue
     case purple
     
@@ -22,23 +23,26 @@ enum ColorPalette {
         case .pink: return Color.pink
         case .orange: return Color.orange
         case .yellow: return Color.yellow
+        case .green: return Color.green
         case .blue: return Color.blue
         case .purple: return Color.purple
         }
     }
 }
 
+extension ColorPalette: CaseIterable { }
+
 extension Color {
     var first: Color {
-        return multiplySaturation(0.8)
+        return multiplySaturation(0.7)
     }
     
     var second: Color {
-        return multiplySaturation(0.5)
+        return multiplySaturation(0.3)
     }
     
     var third: Color {
-        return multiplySaturation(0.2)
+        return multiplySaturation(0.05)
     }
     
     private func multiplySaturation(_ multiply: CGFloat) -> Color {
@@ -57,85 +61,3 @@ extension Color {
         return Color(uiColor: new)
     }
 }
-
-//struct ColorButton: View {
-//    let thema: ColorPalette
-//    let action: (ColorPalette) -> Void
-//    
-//    var body: some View {
-//        Button {
-//            action(thema)
-//        } label: {
-//            RoundedRectangle(cornerRadius: 10)
-//                .frame(width: 30, height: 30)
-//                .foregroundColor(thema.color.second)
-//        }
-//    }
-//}
-//
-//struct SampleView: View {
-//    @State var main: ColorPalette = .blue
-//    var body: some View {
-//        
-//        VStack {
-//            HStack {
-//                ColorButton(thema: .orange) { color in
-//                    main = color
-//                }
-//                ColorButton(thema: .pink) { color in
-//                    main = color
-//                }
-////                ColorButton(thema: .gray) { color in
-////                    main = color
-////                }
-////                ColorButton(thema: .black) { color in
-////                    main = color
-////                }
-//                ColorButton(thema: .red) { color in
-//                    main = color
-//                }
-//            }
-//            
-//            HStack {
-//                ColorButton(thema: .blue) { color in
-//                    main = color
-//                }
-////                ColorButton(thema: .brown) { color in
-////                    main = color
-////                }
-//                ColorButton(thema: .purple) { color in
-//                    main = color
-//                }
-////                ColorButton(thema: .indigo) { color in
-////                    main = color
-////                }
-//                ColorButton(thema: .yellow) { color in
-//                    main = color
-//                }
-//                
-//            }
-//            
-//            Divider()
-//            
-//            HStack {
-//                RoundedRectangle(cornerRadius: 10)
-//                    .frame(width: 50, height: 50)
-//                    .foregroundColor(main.color.first)
-//                
-//                RoundedRectangle(cornerRadius: 10)
-//                    .frame(width: 50, height: 50)
-//                    .foregroundColor(main.color.second)
-//                
-//                RoundedRectangle(cornerRadius: 10)
-//                    .frame(width: 50, height: 50)
-//                    .foregroundColor(main.color.third)
-//            }
-//        }
-//    }
-//}
-//
-//struct Preview_SampleView: PreviewProvider {
-//    static var previews: some View {
-//        SampleView()
-//    }
-//}

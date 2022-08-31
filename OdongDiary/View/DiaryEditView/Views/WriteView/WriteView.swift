@@ -23,7 +23,7 @@ struct WriteView: View {
             
             if viewModel.type == .write {
                 TextEditor(text: $viewModel.body)
-                    .background(ColorSet.shared.third())
+                    .background(ColorSet.main.third())
             } else if viewModel.type == .read {
                 ScrollView {
                     Text(viewModel.body)

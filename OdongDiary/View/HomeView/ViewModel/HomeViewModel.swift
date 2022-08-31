@@ -26,5 +26,4 @@ final class HomeViewModel: ObservableObject {
     
     @Published var sortType: SortType = .dateAscending
     @Published var diaryName: String = "Odong Diary"
-    
 }

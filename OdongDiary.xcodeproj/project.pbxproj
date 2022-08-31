@@ -18,6 +18,9 @@
 		DE21E08028BF15A7005B258A /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21E07F28BF15A7005B258A /* Date+.swift */; };
 		DE21E08328BF296E005B258A /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21E08228BF296E005B258A /* ColorPalette.swift */; };
 		DE21E08728BF3AE9005B258A /* ColorSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21E08628BF3AE9005B258A /* ColorSet.swift */; };
+		DE21E08928BF8642005B258A /* DiaryNameSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21E08828BF8642005B258A /* DiaryNameSettingView.swift */; };
+		DE21E08C28BF886E005B258A /* ThemaColorSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21E08B28BF886E005B258A /* ThemaColorSettingView.swift */; };
+		DE21E08E28BF9799005B258A /* PaletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21E08D28BF9799005B258A /* PaletteView.swift */; };
 		DE3C978128BB966D00ACAEF6 /* DiaryEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3C978028BB966D00ACAEF6 /* DiaryEditView.swift */; };
 		DE3C978328BB9CAC00ACAEF6 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3C978228BB9CAC00ACAEF6 /* SettingView.swift */; };
 		DE3C978828BBA0DD00ACAEF6 /* DiaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3C978728BBA0DD00ACAEF6 /* DiaryModel.swift */; };
@@ -50,6 +53,9 @@
 		DE21E07F28BF15A7005B258A /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		DE21E08228BF296E005B258A /* ColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
 		DE21E08628BF3AE9005B258A /* ColorSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSet.swift; sourceTree = "<group>"; };
+		DE21E08828BF8642005B258A /* DiaryNameSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryNameSettingView.swift; sourceTree = "<group>"; };
+		DE21E08B28BF886E005B258A /* ThemaColorSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemaColorSettingView.swift; sourceTree = "<group>"; };
+		DE21E08D28BF9799005B258A /* PaletteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletteView.swift; sourceTree = "<group>"; };
 		DE3C978028BB966D00ACAEF6 /* DiaryEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryEditView.swift; sourceTree = "<group>"; };
 		DE3C978228BB9CAC00ACAEF6 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		DE3C978728BBA0DD00ACAEF6 /* DiaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryModel.swift; sourceTree = "<group>"; };
@@ -156,6 +162,16 @@
 			path = Design;
 			sourceTree = "<group>";
 		};
+		DE21E08A28BF8775005B258A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DE21E08828BF8642005B258A /* DiaryNameSettingView.swift */,
+				DE21E08B28BF886E005B258A /* ThemaColorSettingView.swift */,
+				DE21E08D28BF9799005B258A /* PaletteView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		DE3C978428BB9E3C00ACAEF6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				DE3C978228BB9CAC00ACAEF6 /* SettingView.swift */,
+				DE21E08A28BF8775005B258A /* Views */,
 			);
 			path = SettingView;
 			sourceTree = "<group>";
@@ -368,16 +385,19 @@
 				DE21E08028BF15A7005B258A /* Date+.swift in Sources */,
 				DE21E08328BF296E005B258A /* ColorPalette.swift in Sources */,
 				DE3C978828BBA0DD00ACAEF6 /* DiaryModel.swift in Sources */,
+				DE21E08928BF8642005B258A /* DiaryNameSettingView.swift in Sources */,
 				DE3C978328BB9CAC00ACAEF6 /* SettingView.swift in Sources */,
 				DE21E07928BEAEFF005B258A /* VideoFileManager.swift in Sources */,
 				DE3C979A28BC507200ACAEF6 /* WriteView.swift in Sources */,
 				DE21E07128BE842F005B258A /* CoreDataManager.swift in Sources */,
+				DE21E08C28BF886E005B258A /* ThemaColorSettingView.swift in Sources */,
 				DE3C979C28BC7DEC00ACAEF6 /* DiaryEditViewModel.swift in Sources */,
 				DE3C979428BBD77000ACAEF6 /* NavigationBackButton.swift in Sources */,
 				DE3C979828BC45CA00ACAEF6 /* VideoView.swift in Sources */,
 				DE21E08728BF3AE9005B258A /* ColorSet.swift in Sources */,
 				DE3C979228BBB39A00ACAEF6 /* DiaryGridCell.swift in Sources */,
 				DE52FBCC28BB66BB00E5A2F8 /* OdongDiaryApp.swift in Sources */,
+				DE21E08E28BF9799005B258A /* PaletteView.swift in Sources */,
 				DE3C97AB28BD278400ACAEF6 /* VideoPickerView.swift in Sources */,
 				DE3C97B428BE3E6B00ACAEF6 /* DeleteButton.swift in Sources */,
 				DE21E03E28BE5236005B258A /* HomeViewModel.swift in Sources */,

@@ -45,7 +45,7 @@ struct CompleteButton: View {
             presentationMode.wrappedValue.dismiss()
         } label: {
             RoundedRectangle(cornerRadius: 10)
-                .foregroundColor(ColorSet.shared.first())
+                .foregroundColor(ColorSet.main.first())
                 .overlay(Text("완료").foregroundColor(ColorSet.mainBlack))
                 .frame(width: 80, height: 40)
         }

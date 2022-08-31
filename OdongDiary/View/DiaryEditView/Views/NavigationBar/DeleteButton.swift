@@ -21,7 +21,7 @@ struct DeleteButton: View {
         } label: {
             ZStack {
                 RoundedRectangle(cornerRadius: 10)
-                    .foregroundColor(ColorSet.shared.second())
+                    .foregroundColor(ColorSet.main.second())
                     .frame(width: 40, height: 40)
                 
                 Image(systemName: "trash")
