@@ -38,7 +38,7 @@ extension Color {
     }
     
     var second: Color {
-        return multiplySaturation(0.3)
+        return multiplySaturation(0.25)
     }
     
     var third: Color {
