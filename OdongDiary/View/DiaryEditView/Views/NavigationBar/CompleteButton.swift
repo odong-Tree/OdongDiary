@@ -15,12 +15,29 @@ struct CompleteButton: View {
     
     var body: some View {
         Button {
-            // CoreData CRUD
             let diary = viewModel.makeDiaryModel()
             
             if CoreDataManager.hasObject(viewContext, of: diary) {
-                CoreDataManager.update(viewContext, diary)
+//                DiaryCRUD.update(viewContext, of: diary)
+                let old = CoreDataManager.fetch(viewContext, of: diary.id)
+                guard let oldURL = old.value(forKey: "videoURL") as? URL else {
+                    return
+                }
+                
+                guard CoreDataManager.update(viewContext, diary) else {
+                    return
+                }
+                
+                if oldURL != diary.videoURL {
+                    try? VideoFileManager.shared.deleteVideo(url: oldURL)
+                    let new = try? VideoFileManager.shared.writeVideo(from: diary.videoURL, fileName: "\(diary.title)")
+                    viewModel.videoURL = new
+                }
             } else {
+                let new = try? VideoFileManager.shared.writeVideo(from: diary.videoURL, fileName: "\(diary.title)")
+                
+                viewModel.videoURL = new
+                
                 CoreDataManager.save(viewContext, viewModel.makeDiaryModel())
             }
             

@@ -15,8 +15,14 @@ struct DeleteButton: View {
     
     var body: some View {
         Button {
-            // CoreData CRUD
-            CoreDataManager.delete(viewContext, viewModel.makeDiaryModel())
+            let diary = viewModel.makeDiaryModel()
+
+            guard CoreDataManager.delete(viewContext, diary) else {
+                return
+            }
+            
+            try? VideoFileManager.shared.deleteVideo(url: diary.videoURL)
+            
             presentationMode.wrappedValue.dismiss()
         } label: {
             ZStack {

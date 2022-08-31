@@ -35,7 +35,7 @@ struct CoreDataManager {
         
     }
     
-    static private func fetch(_ context: NSManagedObjectContext, of id: String) -> NSManagedObject {
+    static func fetch(_ context: NSManagedObjectContext, of id: String) -> NSManagedObject {
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: entityName)
         let predicate = NSPredicate(format: "id == %@", id)
         fetchRequest.predicate = predicate
