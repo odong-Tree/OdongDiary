@@ -13,38 +13,12 @@ struct HomeView: View {
     @EnvironmentObject var viewModel: HomeViewModel
     @EnvironmentObject var colorSet: ColorSet
     
-    @State var isShowingSettingView: Bool = false
+    
     
     var body: some View {
         NavigationView {
             VStack {
-                HStack {
-                    Menu {
-                        Button("최신순") { viewModel.sortType = .dateAscending }
-                        Button("오래된순") { viewModel.sortType = .dateDesending }
-                    } label: {
-                        Image(systemName: "line.3.horizontal.decrease")
-                    }
-                    
-                    Spacer()
-                    
-                    Text(viewModel.diaryName)
-                        .font(.title)
-                    
-                    Spacer()
-                    
-                    Button {
-                        isShowingSettingView = true
-                    } label: {
-                        Image(systemName: "gearshape.fill")
-                    }
-                    .popover(isPresented: $isShowingSettingView) {
-                        SettingView()
-                            .background(colorSet.second())
-                    }
-                }
-                .foregroundColor(colorSet.mainBlack)
-                .padding(.horizontal)
+                TitleStackView()
                 
                 ZStack {
                     DiaryGridView(sortDescriptor: viewModel.sortType.sortDiscriptor)

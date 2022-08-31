@@ -21,6 +21,7 @@
 		DE21E08928BF8642005B258A /* DiaryNameSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21E08828BF8642005B258A /* DiaryNameSettingView.swift */; };
 		DE21E08C28BF886E005B258A /* ThemaColorSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21E08B28BF886E005B258A /* ThemaColorSettingView.swift */; };
 		DE21E08E28BF9799005B258A /* PaletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21E08D28BF9799005B258A /* PaletteView.swift */; };
+		DE21E09028BFC474005B258A /* TitleStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21E08F28BFC474005B258A /* TitleStackView.swift */; };
 		DE3C978128BB966D00ACAEF6 /* DiaryEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3C978028BB966D00ACAEF6 /* DiaryEditView.swift */; };
 		DE3C978328BB9CAC00ACAEF6 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3C978228BB9CAC00ACAEF6 /* SettingView.swift */; };
 		DE3C978828BBA0DD00ACAEF6 /* DiaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3C978728BBA0DD00ACAEF6 /* DiaryModel.swift */; };
@@ -56,6 +57,7 @@
 		DE21E08828BF8642005B258A /* DiaryNameSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryNameSettingView.swift; sourceTree = "<group>"; };
 		DE21E08B28BF886E005B258A /* ThemaColorSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemaColorSettingView.swift; sourceTree = "<group>"; };
 		DE21E08D28BF9799005B258A /* PaletteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletteView.swift; sourceTree = "<group>"; };
+		DE21E08F28BFC474005B258A /* TitleStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleStackView.swift; sourceTree = "<group>"; };
 		DE3C978028BB966D00ACAEF6 /* DiaryEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryEditView.swift; sourceTree = "<group>"; };
 		DE3C978228BB9CAC00ACAEF6 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		DE3C978728BBA0DD00ACAEF6 /* DiaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryModel.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 		DE3C97A728BD240D00ACAEF6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DE21E08F28BFC474005B258A /* TitleStackView.swift */,
 				DE3C978F28BBA5A500ACAEF6 /* DiaryGridView.swift */,
 				DE3C979128BBB39A00ACAEF6 /* DiaryGridCell.swift */,
 			);
@@ -379,6 +382,7 @@
 				DE3C97A228BCB49300ACAEF6 /* EditViewType.swift in Sources */,
 				DE21E07328BEA55D005B258A /* isHidden.swift in Sources */,
 				DE3C97AF28BE2B5800ACAEF6 /* CustomVideoPlayer.swift in Sources */,
+				DE21E09028BFC474005B258A /* TitleStackView.swift in Sources */,
 				DE52FBCE28BB66BB00E5A2F8 /* HomeView.swift in Sources */,
 				DE3C979028BBA5A500ACAEF6 /* DiaryGridView.swift in Sources */,
 				DE3C979628BBE5E300ACAEF6 /* CompleteButton.swift in Sources */,
