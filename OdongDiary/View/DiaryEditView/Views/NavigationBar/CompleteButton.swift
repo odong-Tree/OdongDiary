@@ -18,7 +18,6 @@ struct CompleteButton: View {
             let diary = viewModel.makeDiaryModel()
             
             if CoreDataManager.hasObject(viewContext, of: diary) {
-//                DiaryCRUD.update(viewContext, of: diary)
                 let old = CoreDataManager.fetch(viewContext, of: diary.id)
                 guard let oldURL = old.value(forKey: "videoURL") as? URL else {
                     return
@@ -34,9 +33,11 @@ struct CompleteButton: View {
                     viewModel.videoURL = new
                 }
             } else {
-                let new = try? VideoFileManager.shared.writeVideo(from: diary.videoURL, fileName: "\(diary.title)")
+                let newFileName = "\(diary.title)_\(UUID().uuidString.prefix(6))"
+                let newURL = try? VideoFileManager.shared.writeVideo(from: diary.videoURL, fileName: newFileName)
                 
-                viewModel.videoURL = new
+                viewModel.fileName = newFileName
+                viewModel.videoURL = newURL
                 
                 CoreDataManager.save(viewContext, viewModel.makeDiaryModel())
             }

@@ -25,6 +25,7 @@ extension Diary {
     @NSManaged public var videoURL: URL
     @NSManaged public var date: Date
     @NSManaged public var id: String
+    @NSManaged public var fileName: String
 
 }
 

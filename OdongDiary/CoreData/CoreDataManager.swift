@@ -72,6 +72,7 @@ struct CoreDataManager {
         object.setValue(diary.title, forKey: "title")
         object.setValue(diary.body, forKey: "body")
         object.setValue(diary.date, forKey: "date")
+        object.setValue(diary.fileName, forKey: "fileName")
         
         do {
             try context.save()

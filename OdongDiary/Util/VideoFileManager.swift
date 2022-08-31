@@ -30,7 +30,7 @@ final class VideoFileManager {
     }
     
     func writeVideo(from albumURL: URL, fileName: String) throws -> URL {
-        let saveURL = folderURL.appendingPathComponent(fileName).appendingPathExtension(".mov")
+        let saveURL = folderURL.appendingPathComponent(fileName).appendingPathExtension("mov")
         let videoData = try Data(contentsOf: albumURL)
         try videoData.write(to: saveURL, options: .atomic)
         
@@ -41,5 +41,10 @@ final class VideoFileManager {
         if FileManager.default.fileExists(atPath: url.path) {
             try FileManager.default.removeItem(at: url)
         }
+    }
+    
+    func fileURL(fileName: String) -> URL {
+        let url = folderURL.appendingPathComponent(fileName).appendingPathExtension("mov")
+        return url
     }
 }
