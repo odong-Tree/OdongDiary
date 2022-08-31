@@ -38,7 +38,7 @@ struct DiaryGridCell: View {
                         Spacer()
                         
                         VStack(alignment: .leading, spacing: 4) {
-                            Text("2022.08.29")
+                            Text(diary.date.convertToString())
                             
                             Text(diary.title + (isRefreshing ? "" : ""))
                                 .lineLimit(1)

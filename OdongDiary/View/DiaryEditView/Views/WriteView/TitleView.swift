@@ -13,8 +13,7 @@ struct TitleView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 5) {
-//            Text(viewModel.date)
-            Text("2022.08.29")
+            Text(viewModel.date.convertToString())
                 .font(.caption)
             
             TextField(text: $viewModel.title) { }
