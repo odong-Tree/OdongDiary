@@ -13,8 +13,6 @@ struct HomeView: View {
     @EnvironmentObject var viewModel: HomeViewModel
     @EnvironmentObject var colorSet: ColorSet
     
-    
-    
     var body: some View {
         NavigationView {
             VStack {

@@ -49,6 +49,9 @@ struct TitleStackView: View {
             .fixedSize(horizontal: true, vertical: false)
             .popover(isPresented: $isShowingSettingView) {
                 SettingView()
+                    .onDisappear(perform: {
+                        isShowingSettingView = false
+                    })
                     .background(colorSet.second())
             }
         }

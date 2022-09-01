@@ -32,6 +32,8 @@ struct SettingView: View {
             
             ThemaColorSettingView()
             
+            SettingButtonStackView()
+            
             Spacer()
         }
         .padding()
