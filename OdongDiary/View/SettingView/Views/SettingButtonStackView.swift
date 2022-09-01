@@ -9,12 +9,24 @@ import Foundation
 import SwiftUI
 
 struct SettingButtonStackView: View {
+    @Environment(\.managedObjectContext) var viewContext
     @EnvironmentObject var colorSet: ColorSet
+    
+    @State var isShowingDeleteAllDataAlert: Bool = false
     
     var body: some View {
         VStack(spacing: 0) {
             SettingButton(name: "일기장 초기화") {
-                // Delete All Diary
+                isShowingDeleteAllDataAlert = true
+            }
+            .alert(isPresented: $isShowingDeleteAllDataAlert) {
+                Alert(title: Text("주의!"),
+                      message: Text("삭제하면 복구할 수 없습니다. 정말 모든 데이터를 삭제하시겠습니까?"),
+                      primaryButton: .destructive(Text("OK"), action: {
+                    CoreDataManager.clearAllData(context: viewContext)
+                    isShowingDeleteAllDataAlert = false
+                })
+                      , secondaryButton: .cancel())
             }
             
             Divider()

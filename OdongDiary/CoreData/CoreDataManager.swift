@@ -111,4 +111,20 @@ struct CoreDataManager {
             return false
         }
     }
+    
+    static func clearAllData(context: NSManagedObjectContext) -> Bool {
+        let dataList = fetch(context)
+        
+        for object in dataList {
+            context.delete(object)
+        }
+        
+        do {
+            try context.save()
+            return true
+        } catch {
+            context.rollback()
+            return false
+        }
+    }
 }
