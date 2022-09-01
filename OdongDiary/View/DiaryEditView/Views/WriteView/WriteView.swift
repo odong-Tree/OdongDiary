@@ -22,14 +22,23 @@ struct WriteView: View {
             
             Divider()
             
-            if viewModel.type == .write {
-                TextEditor(text: $viewModel.body)
-                    .background(colorSet.third())
-            } else if viewModel.type == .read {
-                ScrollView {
-                    Text(viewModel.body)
+            ZStack(alignment: .topLeading) {
+                if viewModel.type == .write {
+                    TextEditor(text: $viewModel.body)
+                        .background(colorSet.third())
+                } else if viewModel.type == .read {
+                    ScrollView {
+                        Text(viewModel.body)
+                    }
+                }
+                
+                if viewModel.body == "" {
+                    Text("내용을 입력하세요.")
+                        .foregroundColor(colorSet.mainBlack.opacity(0.5))
                 }
             }
+            
+
         }
         .environmentObject(viewModel)
         .environmentObject(colorSet)

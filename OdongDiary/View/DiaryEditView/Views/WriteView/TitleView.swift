@@ -13,13 +13,13 @@ struct TitleView: View {
     @EnvironmentObject var colorSet: ColorSet
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 5) {
+        VStack(alignment: .leading, spacing: 7) {
             Text(viewModel.date.convertToString())
                 .font(.caption)
             
-            TextField(text: $viewModel.title) { }
+            TextField("제목을 입력해주세요.", text: $viewModel.title) { }
                 .lineLimit(1)
-                .font(.title2.bold())
+                .font(.title3.bold())
                 .disabled(viewModel.type == .read)
         }
         .foregroundColor(.black.opacity(0.5))
