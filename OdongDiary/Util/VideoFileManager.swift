@@ -47,4 +47,17 @@ final class VideoFileManager {
         let url = folderURL.appendingPathComponent(fileName).appendingPathExtension("mov")
         return url
     }
+    
+    func clearFolder() {
+        do {
+            let urls = try FileManager.default.contentsOfDirectory(at: folderURL, includingPropertiesForKeys: nil, options: .skipsHiddenFiles)
+            
+            for url in urls {
+                try deleteVideo(url: url)
+            }
+        } catch {
+            print(error)
+        }
+        
+    }
 }

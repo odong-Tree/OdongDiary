@@ -24,6 +24,8 @@ struct SettingButtonStackView: View {
                       message: Text("삭제하면 복구할 수 없습니다. 정말 모든 데이터를 삭제하시겠습니까?"),
                       primaryButton: .destructive(Text("OK"), action: {
                     CoreDataManager.clearAllData(context: viewContext)
+                    VideoFileManager.shared.clearFolder()
+                    
                     isShowingDeleteAllDataAlert = false
                 })
                       , secondaryButton: .cancel())
