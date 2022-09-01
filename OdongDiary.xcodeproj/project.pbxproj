@@ -23,6 +23,7 @@
 		DE21E08E28BF9799005B258A /* PaletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21E08D28BF9799005B258A /* PaletteView.swift */; };
 		DE21E09028BFC474005B258A /* TitleStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21E08F28BFC474005B258A /* TitleStackView.swift */; };
 		DE21E09228C0D4E8005B258A /* SettingButtonStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21E09128C0D4E8005B258A /* SettingButtonStackView.swift */; };
+		DE21E09428C1255F005B258A /* UIApplication+hideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21E09328C1255F005B258A /* UIApplication+hideKeyboard.swift */; };
 		DE3C978128BB966D00ACAEF6 /* DiaryEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3C978028BB966D00ACAEF6 /* DiaryEditView.swift */; };
 		DE3C978328BB9CAC00ACAEF6 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3C978228BB9CAC00ACAEF6 /* SettingView.swift */; };
 		DE3C978828BBA0DD00ACAEF6 /* DiaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3C978728BBA0DD00ACAEF6 /* DiaryModel.swift */; };
@@ -60,6 +61,7 @@
 		DE21E08D28BF9799005B258A /* PaletteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletteView.swift; sourceTree = "<group>"; };
 		DE21E08F28BFC474005B258A /* TitleStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleStackView.swift; sourceTree = "<group>"; };
 		DE21E09128C0D4E8005B258A /* SettingButtonStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingButtonStackView.swift; sourceTree = "<group>"; };
+		DE21E09328C1255F005B258A /* UIApplication+hideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+hideKeyboard.swift"; sourceTree = "<group>"; };
 		DE3C978028BB966D00ACAEF6 /* DiaryEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryEditView.swift; sourceTree = "<group>"; };
 		DE3C978228BB9CAC00ACAEF6 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		DE3C978728BBA0DD00ACAEF6 /* DiaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryModel.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				DE21E07628BEAE18005B258A /* URL+.swift */,
+				DE21E09328C1255F005B258A /* UIApplication+hideKeyboard.swift */,
 				DE21E07F28BF15A7005B258A /* Date+.swift */,
 			);
 			path = Extension;
@@ -391,6 +394,7 @@
 				DE3C979628BBE5E300ACAEF6 /* CompleteButton.swift in Sources */,
 				DE21E09228C0D4E8005B258A /* SettingButtonStackView.swift in Sources */,
 				DE21E08028BF15A7005B258A /* Date+.swift in Sources */,
+				DE21E09428C1255F005B258A /* UIApplication+hideKeyboard.swift in Sources */,
 				DE21E08328BF296E005B258A /* ColorPalette.swift in Sources */,
 				DE3C978828BBA0DD00ACAEF6 /* DiaryModel.swift in Sources */,
 				DE21E08928BF8642005B258A /* DiaryNameSettingView.swift in Sources */,

@@ -59,6 +59,8 @@ struct DiaryEditView: View {
             if let diary = diary {
                 viewModel.readDiary(diary)
             }
+            
+            UIApplication.shared.hideKeyboard()
         }
     }
 }
