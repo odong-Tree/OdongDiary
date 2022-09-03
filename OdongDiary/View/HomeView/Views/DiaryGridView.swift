@@ -5,9 +5,7 @@
 //  Created by odongnamu on 2022/08/28.
 //
 
-import Foundation
 import SwiftUI
-import CoreData
 
 struct DiaryGridView: View {
     @EnvironmentObject var viewModel: HomeViewModel

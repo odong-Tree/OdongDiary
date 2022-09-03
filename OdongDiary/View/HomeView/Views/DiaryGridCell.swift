@@ -5,7 +5,6 @@
 //  Created by odongnamu on 2022/08/28.
 //
 
-import Foundation
 import SwiftUI
 
 struct DiaryGridCell: View {

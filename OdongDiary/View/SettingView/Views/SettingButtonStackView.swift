@@ -5,7 +5,6 @@
 //  Created by odongnamu on 2022/09/01.
 //
 
-import Foundation
 import SwiftUI
 
 struct SettingButtonStackView: View {

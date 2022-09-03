@@ -5,7 +5,6 @@
 //  Created by odongnamu on 2022/08/30.
 //
 
-import Foundation
 import SwiftUI
 
 struct DeleteButton: View {
