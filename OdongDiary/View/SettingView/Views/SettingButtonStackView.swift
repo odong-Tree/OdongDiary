@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SettingButtonStackView: View {
     @Environment(\.managedObjectContext) var viewContext
+    @Environment(\.openURL) var openURL
     @EnvironmentObject var colorSet: ColorSet
     
     @State var isShowingDeleteAllDataAlert: Bool = false
@@ -34,7 +35,9 @@ struct SettingButtonStackView: View {
                 .padding(.horizontal)
             
             SettingButton(name: "Github 저장소로 이동") {
-                // Move to Github Repository
+                if let url = URL(string: "https://github.com/odong-Tree/OdongDiary") {
+                    openURL(url)
+                }
             }
         }
         .cornerRadius(10)
