@@ -10,8 +10,22 @@ import AVKit
 
 final class DiaryEditViewModel: ObservableObject {
     @Published var videoURL: URL!
-    @Published var title: String = ""
-    @Published var body: String = ""
+    @Published var title: String = "" {
+        didSet {
+            let limit = 15
+            if title.count > limit {
+                title = String(title.prefix(limit))
+            }
+        }
+    }
+    @Published var body: String = "" {
+        didSet {
+            let limit = 500
+            if body.count > limit {
+                body = String(body.prefix(limit))
+            }
+        }
+    }
     @Published var id: String = UUID().uuidString
     @Published var date: Date = Date()
     var fileName: String = ""

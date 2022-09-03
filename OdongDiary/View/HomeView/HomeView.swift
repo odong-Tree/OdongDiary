@@ -41,8 +41,6 @@ struct HomeView: View {
             }
             .navigationBarHidden(true)
             .background(colorSet.third())
-            .environmentObject(viewModel)
-            .environmentObject(colorSet)
         }
     }
 }

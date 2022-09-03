@@ -52,7 +52,6 @@ struct DiaryEditView: View {
         .padding(.bottom)
         .background(colorSet.third())
         .environmentObject(viewModel)
-        .environmentObject(colorSet)
         .onAppear {
             viewModel.type = type
             

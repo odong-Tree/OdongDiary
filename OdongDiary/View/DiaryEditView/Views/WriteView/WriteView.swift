@@ -23,28 +23,7 @@ struct WriteView: View {
         VStack(alignment: .leading) {
             TitleView()
             
-            Divider()
-            
-            ZStack(alignment: .topLeading) {
-                if viewModel.type == .write {
-                    TextEditor(text: $viewModel.body)
-                        .lineSpacing(1.9)
-                        .background(colorSet.third())
-                } else if viewModel.type == .read {
-                    ScrollView {
-                        Text(viewModel.body)
-                    }
-                }
-                
-                if viewModel.body == "" {
-                    Text("내용을 입력하세요.")
-                        .foregroundColor(colorSet.mainBlack.opacity(0.5))
-                }
-            }
-            
-
+            BodyTextEditor()
         }
-        .environmentObject(viewModel)
-        .environmentObject(colorSet)
     }
 }

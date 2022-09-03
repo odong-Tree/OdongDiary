@@ -37,7 +37,5 @@ struct SettingView: View {
             Spacer()
         }
         .padding()
-        .environmentObject(viewModel)
-        .environmentObject(colorSet)
     }
 }

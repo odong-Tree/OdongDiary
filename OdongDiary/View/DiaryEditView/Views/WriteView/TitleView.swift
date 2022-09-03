@@ -17,10 +17,9 @@ struct TitleView: View {
             Text(viewModel.date.convertToString())
                 .font(.caption)
             
-            TextField("제목을 입력해주세요.", text: $viewModel.title) { }
-                .lineLimit(1)
-                .font(.title3.bold())
-                .disabled(viewModel.type == .read)
+            TitleTextEditor()
+            
+            Divider()
         }
         .foregroundColor(.black.opacity(0.5))
     }

@@ -30,7 +30,5 @@ struct DiaryGridView: View {
                 }
             }
         }
-        .environmentObject(viewModel)
-        .environmentObject(colorSet)
     }
 }
