@@ -66,12 +66,12 @@ struct CoreDataManager {
     
     static func save(_ context: NSManagedObjectContext, _ diary: DiaryModel) -> Bool {
         let object = NSEntityDescription.insertNewObject(forEntityName: entityName, into: context)
-        object.setValue(diary.id, forKey: "id")
-        object.setValue(diary.videoURL, forKey: "videoURL")
-        object.setValue(diary.title, forKey: "title")
-        object.setValue(diary.body, forKey: "body")
-        object.setValue(diary.date, forKey: "date")
-        object.setValue(diary.fileName, forKey: "fileName")
+        object.setValue(diary.id, forKey: DiaryProperty.id)
+        object.setValue(diary.videoURL, forKey: DiaryProperty.videoURL)
+        object.setValue(diary.title, forKey: DiaryProperty.title)
+        object.setValue(diary.body, forKey: DiaryProperty.body)
+        object.setValue(diary.date, forKey: DiaryProperty.date)
+        object.setValue(diary.fileName, forKey: DiaryProperty.fileName)
         
         do {
             try context.save()
@@ -84,10 +84,10 @@ struct CoreDataManager {
     
     static func update(_ context: NSManagedObjectContext, _ diary: DiaryModel) -> Bool {
         let object = self.fetch(context, of: diary.id)
-        object.setValue(diary.videoURL, forKey: "videoURL")
-        object.setValue(diary.title, forKey: "title")
-        object.setValue(diary.body, forKey: "body")
-        object.setValue(diary.date, forKey: "date")
+        object.setValue(diary.videoURL, forKey: DiaryProperty.videoURL)
+        object.setValue(diary.title, forKey: DiaryProperty.title)
+        object.setValue(diary.body, forKey: DiaryProperty.body)
+        object.setValue(diary.date, forKey: DiaryProperty.date)
         
         do {
             try context.save()
@@ -126,4 +126,13 @@ struct CoreDataManager {
             return false
         }
     }
+}
+
+fileprivate enum DiaryProperty {
+    static let id = "id"
+    static let videoURL = "videoURL"
+    static let title = "title"
+    static let body = "body"
+    static let date = "date"
+    static let fileName = "fileName"
 }

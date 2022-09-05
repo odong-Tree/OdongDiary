@@ -9,7 +9,9 @@ import SwiftUI
  
 extension UIApplication {
     func hideKeyboard() {
-        guard let window = windows.first else { return }
+        guard let firstScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
+        guard let window = firstScene.windows.first else { return }
+        
         let tapRecognizer = UITapGestureRecognizer(target: window, action: #selector(UIView.endEditing))
         tapRecognizer.cancelsTouchesInView = false
         tapRecognizer.delegate = self
