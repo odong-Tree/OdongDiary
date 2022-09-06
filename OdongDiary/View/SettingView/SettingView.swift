@@ -36,5 +36,6 @@ struct SettingView: View {
             Spacer()
         }
         .padding()
+        .background(colorSet.second())
     }
 }

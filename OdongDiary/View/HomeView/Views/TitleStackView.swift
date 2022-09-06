@@ -51,7 +51,6 @@ struct TitleStackView: View {
                     .onDisappear(perform: {
                         isShowingSettingView = false
                     })
-                    .background(colorSet.second())
             }
         }
         .foregroundColor(colorSet.mainBlack)
