@@ -308,8 +308,7 @@
 				DE21E07A28BEAF08005B258A /* Util */,
 				DE21E07528BEAE07005B258A /* Extension */,
 				DE21E08128BF28B7005B258A /* Design */,
-				DE52FBCF28BB66BC00E5A2F8 /* Assets.xcassets */,
-				DE52FBD128BB66BC00E5A2F8 /* Preview Content */,
+				DEBB3A8A28C8D8C70057D305 /* Resource */,
 			);
 			path = OdongDiary;
 			sourceTree = "<group>";
@@ -320,6 +319,15 @@
 				DE52FBD228BB66BC00E5A2F8 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DEBB3A8A28C8D8C70057D305 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				DE52FBCF28BB66BC00E5A2F8 /* Assets.xcassets */,
+				DE52FBD128BB66BC00E5A2F8 /* Preview Content */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
