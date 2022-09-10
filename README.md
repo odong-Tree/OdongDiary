@@ -20,17 +20,17 @@ Odong Diary는 영상 일기를 쓰는 앱입니다. 앨범에 있는 영상을 
 | 일기장 삭제 | 글자수 제한 |
 |---|---|
 | <img src = "https://user-images.githubusercontent.com/73867548/189189075-ba7d085c-aed1-4bac-bdb6-a6e99fb5160c.gif" width="60%"> | <img src = "https://user-images.githubusercontent.com/73867548/189189057-c359b40c-fcb6-4e28-92e0-481888e2c8f6.gif" width="60%"> |
-| - 삭제시 Alert 구현 | - 제목 15자, 내용 500자까지 입력 가능하도록 글자수 제한 <br> - 작성중 뒤로가기 할 경우 경고 Alert 표시 |  
+| - 삭제시 경고 Alert 표시 | - 제목 15자, 내용 500자까지 입력 가능하도록 글자수 제한 <br> - 작성중 뒤로가기를 시도할 경우 경고 Alert 표시 |  
 
 | 테마색 변경 기능  | 모든 일기장 삭제  |
 |---|---|
 | <img src = "https://user-images.githubusercontent.com/73867548/189189082-f7a0cbb7-3e21-4349-be57-9d0163b5f148.gif" width="60%">  |  <img src = "https://user-images.githubusercontent.com/73867548/189189095-3ff8dbf9-acd5-4da1-8923-6037929e53d0.gif" width="60%"> |
-| - 원하는 테마 색상으로 변경 가능  |  - 모든 일기장 삭제 기능 구현 <br> - 삭제시 경고 Alert 표시 |
+| - 원하는 테마 색상으로 변경 가능  |  - 모든 일기장을 영구적으로 삭제하는 기능 <br> - 삭제시 경고 Alert 표시 |
 
-| 일기장 이름 변경 |  오래된 순, 최신순 정렬  |
+| 일기장 이름 변경 |  오래된순, 최신순 정렬  |
 |---|---|
 | <img src = "https://user-images.githubusercontent.com/73867548/189189071-b225950a-d80c-4f63-b722-5c797833559e.gif" width="60%">  | <img src = "https://user-images.githubusercontent.com/73867548/189189086-813a1c26-60b8-4331-af35-637d04ef8c55.gif" width="60%"> |
-|  - 일기장 이름을 원하는대로 변경 | - 일기장을 오래된순, 최신순으로 정렬하는 기능  |
+|  - 일기장 이름을 원하는대로 변경 가능 | - 일기장을 오래된순, 최신순으로 정렬하는 기능  |
 
 
 <br>
